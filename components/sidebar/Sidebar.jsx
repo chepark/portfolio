@@ -7,7 +7,7 @@ import DevToIcon from "../icons/DevToIcon";
 const Sidebar = () => {
   return (
     // add classname for styling on <a> tag.
-    <div className="sticky top-0 flex flex-col justify-between h-screen p-8">
+    <div className="sticky top-0 flex flex-col justify-between h-screen px-8 py-12">
       <nav>
         <ul className="flex flex-col gap-12">
           <li>
@@ -32,6 +32,8 @@ const Sidebar = () => {
           </li>
         </ul>
       </nav>
+
+      {/* SOCIAL LINKS */}
       <div className="flex flex-col gap-8">
         <div>
           <LinkedInIcon />

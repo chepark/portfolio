@@ -1,12 +1,17 @@
 import React from "react";
 import Sidebar from "../sidebar/Sidebar";
+import Footer from "../footer/Footer";
 
 const Layout = (props) => {
   return (
-    <div className="flex">
-      <Sidebar />
-      <main className="container relative mx-auto">{props.children}</main>
-    </div>
+    <>
+      <div className="flex">
+        <Sidebar />
+        <main className="container relative pt-12 mx-auto">
+          {props.children}
+        </main>
+      </div>
+    </>
   );
 };
 
