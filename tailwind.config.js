@@ -8,6 +8,12 @@ module.exports = {
       lg: "864px",
       xl: "864px",
     },
+    fontSize: {
+      base: ["16px", "24px"],
+      lg: ["20px", "27px"],
+      xl: ["36px", "44px"],
+      "2xl": ["40px", "49px"],
+    },
     extend: {
       colors: {
         primaryBlack: "#181A18",
@@ -18,5 +24,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
