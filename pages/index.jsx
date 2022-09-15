@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
+import SectionTitle from "../components/home/SectionTitle";
 import PageHeader from "../components/pageHeader/PageHeader";
+import { getAllPosts } from "../lib/posts";
 
-export default function Home() {
+export default function Home({ posts }) {
+  console.log(posts);
   return (
     <div>
       <Head>
@@ -15,6 +18,24 @@ export default function Home() {
         subTitle={`I am a front-end developer and engineering student.
           Colors and diagrams are my other languages.`}
       />
+
+      <div>
+        <SectionTitle section="projects" />
+      </div>
+
+      <div>
+        <SectionTitle section="blog" />
+      </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const posts = getAllPosts();
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }

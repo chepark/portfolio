@@ -1,0 +1,179 @@
+---
+title: MERN stack project setup to push to Github
+tags:
+  - mongodb
+  - react
+  - express
+  - node
+  - github
+date: 2022-07-18
+excerpt: This is a step-by-step guideline about MERN project setup and first push of your full stack project to Github.
+---
+
+``
+![MERN project to push to Github](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zna8cws7p9fhunr82gzs.png)
+
+This is a step-by-step guideline about MERN project setup and first push of your full stack project to Github. If you need only the way regarding push to Github, please follow the steps from 3 to 11.
+
+**Prerequisite**
+
+- You have installed [Node.js](https://nodejs.org/en/download/) in your work environment.
+- You have an account in [Github](https://github.com/).
+
+##1.Create directories for your project.
+Create the project and server directories. The server(or backend) directory is a child of the project folder.
+
+Do not create the client yet. The client directory will be created soon at the next step.
+
+![Create the project and server directories](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8bx5a5gk5nxwmpov4p5u.png)
+
+##2. Create a React app in the client folder.
+In your command line, make sure you are inside of the project directory. Create a react application and name it as client (or frontend).
+
+![create-react-app in the client folder](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/goayp94this7o39xio11.png)
+
+```
+$ cd project
+$ npx create-react-app client
+```
+
+##3. Remove the git repository in the client directory.
+We need to remove the git repository in the client folder. The git repo was created in the step 2 where the react application was set up.
+
+![Remove the .git in the client folder](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/upb0o26g6ce2yb8amkfn.png)
+
+In the command line, move to the client folder and type the following codes. If you are curious about what "rm -rf" does, check out the reference link on the bottom of this article.
+
+```
+$ cd client
+$ rm -rf .git
+```
+
+##4. Move .gitignore file from the client to the project directory.
+![Move .gitignore](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r6ib331tbzdro4fy6xjl.png)
+
+You see the .gitignore file in the client directory like the photo below.
+![.gitignore in the react](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sz8vix0ugp04czq0xdkm.png)
+
+Move the .gitignore file for the client to your project directory.
+![.gitignore to the project file](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vf1y6dzaue7seblbc7ci.png)
+
+##5.Edit the .gitignore
+Open the .gitignore file and find "/node_modules" and "/build". You should remove the slashes("/") in front of the node_modules and build. By doing this, node_modules and build in both client and server will be ignored.
+
+```dockerfile
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+build
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+```
+
+##6. Initialize git in the project.
+Go to the project directory in your command line and initialize the git.
+
+```
+$ git init
+```
+
+Now you are almost there until your first push to Github. The diagram below simply summarizes all steps you've gone through so far.
+
+![Folder status](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cr2pot6lkufh8tt2o6bd.png)
+
+##7. Commit the project setup.
+
+```
+$ git add .
+$ git commit -m 'Init the project'
+```
+
+##8. Create a main branch in the local repo.
+
+```
+$ git branch -M main
+```
+
+If you wonder about the "-M" flag like me, I can simply put that it renames the master to main. If you want to dig into the -M flag, please refer to the link below.
+
+##9. Go to [github.com](https://github.com/) and create repository.
+
+Create a remote repository for the project in Github. If you don't have an account, you need to sign up first.
+
+##10. Connect the local repository to the remote one.
+![Copy the link in Github](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1htjxad9gi0l7i1w3s77.png)
+
+After creating the repository, hit the code button and copy the link. In the command line, make sure you are in the project directory and type the following code.
+
+```
+$ git add origin <YOUR LINK HERE>
+```
+
+##11. Push to Github
+Push the project to the remote repo. Do you want to know more about -u flag? Please check out the reference below.
+
+```
+$ git push -u origin main
+```
+
+From the step 12, we are going to setup the server side.
+
+##12. Run npm init in the server directory.
+In command line, make sure you are in the server directory and initialize npm.
+
+```
+npm init -y
+```
+
+##13. Modify the package.json
+If you want to use `import` instead of `require`, add `"type": "module"` in the package.json like below.
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bhegldk10ldruzwrws8m.png)
+
+##14. Create server.js file and install Express.js
+In the server directory, create a server.js file and install Express.js.
+
+```
+npm install express
+```
+
+##15. Let's set up the server.
+
+<pre>
+```javascript
+import express from "express";
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("connected");
+});
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log("Server listening the port http://localhost/" + port);
+});
+```</pre>
+
+**[More To Read]**
+
+- [What is `-M` flag in `git branch -M main`](https://stackoverflow.com/questions/68277661/what-does-the-m-mean-in-git-branch-m-main)
+- [What does the Linux command `rm -rf` do? ](https://www.javatpoint.com/linux-rm-rf)
+- [What is `-u` flag](ttps://stackoverflow.com/questions/5697750/what-exactly-does-the-u-do-git-push-u-origin-master-vs-git-push-origin-ma)

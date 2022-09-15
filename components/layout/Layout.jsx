@@ -9,6 +9,7 @@ const Layout = (props) => {
         <Sidebar />
         <main className="container relative pt-12 mx-auto">
           {props.children}
+          <Footer />
         </main>
       </div>
     </>

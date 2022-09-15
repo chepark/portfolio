@@ -1,6 +1,16 @@
 {
   "name": "cheah-park",
-  "version": "0.1.0",
+  "description": "My portfolio website-",
+  "author": {
+    "name": "Chaeah Park",
+    "email": "parkchaeah331@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chepark/portfolio"
+  },
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,6 +23,8 @@
     "@next/mdx": "^12.3.0",
     "@tailwindcss/typography": "^0.5.7",
     "autoprefixer": "^10.4.8",
+    "glob": "^8.0.3",
+    "gray-matter": "^4.0.3",
     "next": "12.2.5",
     "postcss": "^8.4.16",
     "react": "18.2.0",
