@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
+import { list } from "postcss";
+import SectionPostList from "../components/home/SectionPostList";
 import SectionTitle from "../components/home/SectionTitle";
 import PageHeader from "../components/pageHeader/PageHeader";
 import { getAllPosts } from "../lib/posts";
 
-export default function Home({ posts }) {
-  console.log(posts);
+export default function Home({ postsMeta }) {
   return (
     <div>
       <Head>
@@ -15,7 +16,7 @@ export default function Home({ posts }) {
 
       <PageHeader
         title="Cheah Park"
-        subTitle={`I am a front-end developer and engineering student.
+        subTitle={`I am a front-end developer and an engineering student.
           Colors and diagrams are my other languages.`}
       />
 
@@ -25,17 +26,19 @@ export default function Home({ posts }) {
 
       <div>
         <SectionTitle section="blog" />
+        <SectionPostList postsMeta={postsMeta} />
       </div>
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts();
+  const posts = getAllPosts().slice(0, 5);
+  const postsMeta = posts.map((post) => post.meta);
 
   return {
     props: {
-      posts,
+      postsMeta,
     },
   };
 }

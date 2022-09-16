@@ -7,7 +7,7 @@ const SectionTitle = ({ section }) => {
   const firstCharToUpperCase = firstChar.toUpperCase();
   const title = section.replace(firstChar, firstCharToUpperCase);
 
-  const linkText = "All " + section;
+  const linkText = `All ${section == "blog" ? "posts" : section}`;
 
   return (
     <div className="flex justify-between mt-12">

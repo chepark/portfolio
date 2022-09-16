@@ -15,6 +15,9 @@
 }
 
 @layer components {
+  .list-grow {
+    @apply flex items-center justify-between border-b cursor-pointer hover:scale-[1.01] transition duration-300 hover:ease-in;
+  }
 }
 
 html,
