@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        "primary-black": "#181816",
+        "primary-black": "#363434",
       },
       fontFamily: {
         ibm: ["IBM Plex Sans", "sans-serif"],

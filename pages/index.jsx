@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import profilePic from "../public/me.png";
+
 import { list } from "postcss";
 import SectionPostList from "../components/home/SectionPostList";
 import SectionTitle from "../components/home/SectionTitle";
 import PageHeader from "../components/pageHeader/PageHeader";
 import { getAllPosts } from "../lib/posts";
+import SectionIntro from "../components/home/SectionIntro";
 
 export default function Home({ postsMeta }) {
   return (
@@ -16,22 +17,21 @@ export default function Home({ postsMeta }) {
       </Head>
 
       <div className="flex items-center justify-between">
-        <PageHeader
-          title="Cheah Park"
-          subTitle={`Web Developer and Engineering Student.
-          I love software, networks, and user-friendly design.`}
-        />
-        <div className="overflow-hidden rounded-full w-28 h-28">
-          <Image src={profilePic} alt="Author of the article" />
-        </div>
+        <PageHeader title="Cheah Park" />
       </div>
 
-      <div>
-        <SectionTitle section="projects" />
+      <SectionIntro />
+
+      <div className="mt-24">
+        <SectionTitle section="skills" />
       </div>
 
-      <div>
-        <SectionTitle section="blog" />
+      <div className="mt-24">
+        <SectionTitle section="projects" linkText="All projects" />
+      </div>
+
+      <div className="mt-24">
+        <SectionTitle section="blog" linkText="All posts" />
         <SectionPostList postsMeta={postsMeta} />
       </div>
     </div>
