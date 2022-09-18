@@ -1,6 +1,6 @@
 {
   "name": "cheah-park",
-  "description": "My portfolio website-",
+  "description": "My portfolio website.",
   "author": {
     "name": "Chaeah Park",
     "email": "parkchaeah331@gmail.com"
@@ -30,6 +30,9 @@
     "postcss": "^8.4.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-highlight": "^5.0.2",
+    "rehype-slug": "^5.0.1",
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {

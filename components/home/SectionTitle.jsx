@@ -11,7 +11,7 @@ const SectionTitle = ({ section }) => {
 
   return (
     <div className="flex justify-between mt-12">
-      <h3 className="text-xl">{title}</h3>
+      <h2 className="text-xl font-righteous">{title}</h2>
       <div className="flex flex-row items-center gap-2">
         <Link href={"/" + section}>{linkText}</Link>
         <RightArrowIcon />

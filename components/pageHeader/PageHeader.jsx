@@ -6,7 +6,7 @@ const PageHeader = ({ title, subTitle }) => {
 
   return (
     <header>
-      <h1 className={`text-2xl ${textAlignClass}`}>{title}</h1>
+      <h1 className={`${textAlignClass} font-righteous`}>{title}</h1>
       <p className={`mt-3 text-base whitespace-pre-line ${textAlignClass}`}>
         {subTitle}
       </p>

@@ -5,9 +5,9 @@ module.exports = {
   theme: {
     screens: {
       sm: "480px",
-      md: "800px",
-      lg: "800px",
-      xl: "800px",
+      md: "678px",
+      lg: "678px",
+      xl: "678px",
     },
     fontSize: {
       base: ["16px", "24px"],
@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        primaryBlack: "#181A18",
+        "primary-black": "#181816",
       },
       fontFamily: {
         ibm: ["IBM Plex Sans", "sans-serif"],

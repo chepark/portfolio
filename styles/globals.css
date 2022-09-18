@@ -4,13 +4,23 @@
 
 @layer base {
   html {
-    @apply font-ibm;
+    @apply text-base font-ibm text-primary-black;
   }
 
-  h1,
-  h2,
+  h1 {
+    @apply text-2xl text-primary-black;
+  }
+
+  h2 {
+    @apply text-xl text-primary-black;
+  }
+
   h3 {
-    @apply font-righteous;
+    @apply text-lg font-semibold font-ibm text-primary-black;
+  }
+
+  h4 {
+    @apply text-base font-ibm text-primary-black;
   }
 }
 
@@ -24,8 +34,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 a {
@@ -35,6 +44,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+code {
+  border-radius: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
