@@ -2565,6 +2565,11 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-physics-dragger@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-physics-dragger/-/react-physics-dragger-2.0.0.tgz#50482e7f57fd4b38a07e4a770fc5ef8b6053bd97"
+  integrity sha512-U23ujm1s1L+JjL/G/fTi/V2SGgI4XsNkOJXnEs3NPtjibmjDsXjCRTOPbarWdKLQUvUdeAP1Z7UxV4AI8UnzEg==
+
 react@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"

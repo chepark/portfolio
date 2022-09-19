@@ -8,6 +8,7 @@ import PageHeader from "../components/pageHeader/PageHeader";
 import { getAllPosts } from "../lib/posts";
 import SectionIntro from "../components/home/SectionIntro";
 import SectionSkills from "../components/home/SectionSkills";
+import SectionProjectList from "../components/home/SectionProjectList";
 
 export default function Home({ postsMeta }) {
   return (
@@ -30,6 +31,7 @@ export default function Home({ postsMeta }) {
 
       <div className="mt-24">
         <SectionTitle section="projects" linkText="All projects" />
+        <SectionProjectList />
       </div>
 
       <div className="mt-24">
