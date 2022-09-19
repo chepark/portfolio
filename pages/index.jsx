@@ -7,6 +7,7 @@ import SectionTitle from "../components/home/SectionTitle";
 import PageHeader from "../components/pageHeader/PageHeader";
 import { getAllPosts } from "../lib/posts";
 import SectionIntro from "../components/home/SectionIntro";
+import SectionSkills from "../components/home/SectionSkills";
 
 export default function Home({ postsMeta }) {
   return (
@@ -24,6 +25,7 @@ export default function Home({ postsMeta }) {
 
       <div className="mt-24">
         <SectionTitle section="skills" />
+        <SectionSkills />
       </div>
 
       <div className="mt-24">

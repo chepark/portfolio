@@ -1,8 +1,5 @@
 import Link from "next/link";
-import LinkedInIcon from "../icons/LinkedInIcon";
-import GithubIcon from "../icons/GithubIcon";
-import EmailIcon from "../icons/EmailIcon";
-import DevToIcon from "../icons/DevToIcon";
+import { LinkedInIcon, GithubIcon, EmailIcon, DevToIcon } from "../icons";
 
 const Sidebar = () => {
   return (
@@ -36,16 +33,24 @@ const Sidebar = () => {
       {/* SOCIAL LINKS */}
       <div className="flex flex-col gap-8">
         <div>
-          <LinkedInIcon />
+          <a href="https://www.linkedin.com/in/cheahpark/" target="_blank">
+            <LinkedInIcon />
+          </a>
         </div>
         <div>
-          <GithubIcon />
+          <a href="https://github.com/chepark" target="_blank">
+            <GithubIcon width="35" height="34.14" />
+          </a>
         </div>
         <div>
-          <EmailIcon />
+          <a href="mailto:parkchaeah331@gmail.com" target="_blank">
+            <EmailIcon />
+          </a>
         </div>
         <div>
-          <DevToIcon />
+          <a href="https://dev.to/birdy" target="_blank">
+            <DevToIcon />
+          </a>
         </div>
       </div>
     </div>
