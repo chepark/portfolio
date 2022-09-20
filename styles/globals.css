@@ -26,7 +26,13 @@
 
 @layer components {
   .list-grow {
-    @apply flex items-center justify-between border-b cursor-pointer hover:scale-[1.01] transition duration-300 hover:ease-in;
+    @apply flex items-center justify-between  border-b cursor-pointer hover:scale-[1.01] transition duration-300 hover:ease-in flex-col sm:flex-row;
+  }
+}
+
+@layer utilities {
+  .clip-inset {
+    clip-path: inset(0% -100% 0% 0%);
   }
 }
 

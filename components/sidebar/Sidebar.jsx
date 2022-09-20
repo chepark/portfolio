@@ -4,7 +4,7 @@ import { LinkedInIcon, GithubIcon, EmailIcon, DevToIcon } from "../icons";
 const Sidebar = () => {
   return (
     // add classname for styling on <a> tag.
-    <div className="sticky top-0 flex flex-col justify-between h-screen px-8 py-12">
+    <div className="sticky top-0 flex-col justify-between hidden h-screen px-8 py-12 md:flex">
       <nav>
         <ul className="flex flex-col gap-12">
           <li>
