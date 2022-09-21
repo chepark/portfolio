@@ -24,17 +24,17 @@ export default function Home({ postsMeta }) {
 
       <SectionIntro />
 
-      <div className="mt-24">
+      <div className="mt-32">
         <SectionTitle section="skills" />
         <SectionSkills />
       </div>
 
-      <div className="mt-24">
+      <div className="mt-32">
         <SectionTitle section="projects" linkText="All projects" />
         <SectionProjectList />
       </div>
 
-      <div className="mt-24">
+      <div className="mt-32">
         <SectionTitle section="blog" linkText="All posts" />
         <SectionPostList postsMeta={postsMeta} />
       </div>

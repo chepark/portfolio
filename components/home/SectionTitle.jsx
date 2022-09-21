@@ -10,7 +10,7 @@ const SectionTitle = ({ section, linkText }) => {
   // const linkText = `All ${section == "blog" ? "posts" : section}`;
 
   return (
-    <div className="flex justify-between mt-12">
+    <div className="flex justify-between">
       <h2 className="text-xl font-righteous">{title}</h2>
       {linkText && (
         <div className="flex flex-row items-center gap-2">

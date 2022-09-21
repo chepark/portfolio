@@ -4,7 +4,7 @@ import { LinkedInIcon, GithubIcon, EmailIcon, DevToIcon } from "../icons";
 const Sidebar = () => {
   return (
     // add classname for styling on <a> tag.
-    <div className="sticky top-0 flex-col justify-between hidden h-screen px-8 py-12 md:flex">
+    <div className="md:z-[100] flex-col justify-between hidden h-screen px-8 pt-12 md:flex bg-white fixed top-0">
       <nav>
         <ul className="flex flex-col gap-12">
           <li>
@@ -51,6 +51,25 @@ const Sidebar = () => {
           <a href="https://dev.to/birdy" target="_blank">
             <DevToIcon />
           </a>
+        </div>
+        <div className="relative h-44">
+          <svg
+            className="absolute bottom-[-10px] left-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1"
+            height="193"
+            viewBox="0 0 1 193"
+          >
+            <line
+              id="Line_5"
+              data-name="Line 5"
+              y2="193"
+              transform="translate(0.5)"
+              fill="none"
+              stroke="#363434"
+              stroke-width="1"
+            />
+          </svg>
         </div>
       </div>
     </div>
