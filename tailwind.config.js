@@ -22,6 +22,30 @@ module.exports = {
         ibm: ["IBM Plex Sans", "sans-serif"],
         righteous: ["Righteous", "cursive"],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            h2: {
+              "> a": {
+                fontSize: "30px",
+                fontWeight: "bold",
+                "text-decoration": "none",
+              },
+            },
+            li: {
+              margin: "0px",
+            },
+            p: {
+              fontSize: "18px",
+            },
+            img: {
+              display: "block",
+              "margin-left": "auto",
+              "margin-right": "auto",
+            },
+          },
+        },
+      },
       //ADD TYPOGRAPHY
       // REFERENCE: https://www.youtube.com/watch?v=xXQsF0q8KUg
       // WATCH FROM 14:28
