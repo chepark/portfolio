@@ -20,7 +20,7 @@ const PostDetail = ({ post }) => {
         <h1 className="font-bold">{post.meta.title}</h1>
         <AuthorDate date={post.meta.date} />
       </div>
-      <div className="prose">
+      <div className="prose prose-slate max-w-none">
         <MDXRemote {...post.source} />
       </div>
     </>

@@ -26,6 +26,8 @@ module.exports = {
         DEFAULT: {
           css: {
             h2: {
+              "margin-top": "50px",
+              "margin-bottom": "10px",
               "> a": {
                 fontSize: "30px",
                 fontWeight: "bold",
@@ -46,9 +48,6 @@ module.exports = {
           },
         },
       },
-      //ADD TYPOGRAPHY
-      // REFERENCE: https://www.youtube.com/watch?v=xXQsF0q8KUg
-      // WATCH FROM 14:28
     },
   },
   plugins: [require("@tailwindcss/typography")],
