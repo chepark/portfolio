@@ -26,7 +26,19 @@
 
 @layer components {
   .list-grow {
-    @apply cursor-pointer hover:scale-[1.01] transition duration-300 hover:ease-in;
+    @apply cursor-pointer hover:scale-[1.01] transition duration-300 hover:ease-in-out;
+  }
+
+  .card-grayScale {
+    @apply grayscale hover:grayscale-0;
+  }
+
+  .card-transform {
+    @apply transform hover:-translate-y-6;
+  }
+
+  .card-transition {
+    @apply transition duration-500 hover:ease-in;
   }
 }
 

@@ -14,7 +14,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link href="/about">
-              <a>ABOUT</a>
+              <a>MY CV</a>
             </Link>
           </li>
           <li>
@@ -67,7 +67,7 @@ const Sidebar = () => {
               transform="translate(0.5)"
               fill="none"
               stroke="#363434"
-              stroke-width="1"
+              strokeWidth="1"
             />
           </svg>
         </div>

@@ -14,7 +14,7 @@ const SectionIntro = () => {
         </div>
         <div className="w-[120px] sm:w-[176px] relative sm:mb-8 mr-auto">
           <Image
-            class="rounded-full"
+            className="rounded-full"
             src={profilePic}
             alt="Cheah Park, author of the website"
             objectFit="cover"
