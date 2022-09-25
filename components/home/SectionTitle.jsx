@@ -12,7 +12,7 @@ const SectionTitle = ({ section, linkText }) => {
   return (
     <div className="flex justify-between">
       <h2 className="text-xl font-righteous">{title}</h2>
-      {linkText && (
+      {section == "blog" && (
         <div className="flex flex-row items-center gap-2">
           <Link href={"/" + section}>{linkText}</Link>
           <RightArrowIcon />

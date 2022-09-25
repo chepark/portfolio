@@ -30,7 +30,7 @@
   }
 
   .card-grayScale {
-    @apply grayscale hover:grayscale-0;
+    @apply hover:grayscale grayscale-0;
   }
 
   .card-hover-home {

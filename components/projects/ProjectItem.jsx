@@ -1,20 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+
 import ProjectItemMeta from "./ProjectItemMeta";
 
 const ProjectItem = ({ project, path = "/" }) => {
   const PROJECTS_PATH = "/projects";
   const HOME_PATH = "/";
 
-  const [hoverState, setHoverState] = useState("hover");
-
   const imgDimensionSmall =
     project.imageRatio == "landscape" ? "w-80 h-56" : "w-56 h-80";
 
   const imgDimensionLarge =
     project.imageRatio == "landscape"
-      ? "md:w-[538px] md:h-96 w-80 h-56"
+      ? `md:w-[538px] md:h-96 w-80 h-56`
       : "md:w-96 md:h-[538px] w-56 h-80";
 
   return (
@@ -22,7 +20,8 @@ const ProjectItem = ({ project, path = "/" }) => {
       <button
         before={HOME_PATH ? project.title : undefined}
         className={`
-        ${path == PROJECTS_PATH ? imgDimensionLarge : imgDimensionSmall} 
+
+        ${path == PROJECTS_PATH ? imgDimensionLarge : imgDimensionSmall}
         ${path == HOME_PATH && "card-hover-home"} 
         relative`}
       >
@@ -36,5 +35,5 @@ const ProjectItem = ({ project, path = "/" }) => {
     </div>
   );
 };
-
+// ${path == PROJECTS_PATH ? imgDimensionLarge : imgDimensionSmall}
 export default ProjectItem;

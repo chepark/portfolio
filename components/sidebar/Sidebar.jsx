@@ -13,12 +13,12 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/about">
-              <a>MY CV</a>
+            <Link href="/#about">
+              <a>ABOUT</a>
             </Link>
           </li>
           <li>
-            <Link href="/projects">
+            <Link href="/#projects">
               <a>PROJECTS</a>
             </Link>
           </li>
