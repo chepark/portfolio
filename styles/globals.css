@@ -33,12 +33,8 @@
     @apply grayscale hover:grayscale-0;
   }
 
-  .card-transform {
-    @apply transform hover:-translate-y-6;
-  }
-
-  .card-transition {
-    @apply transition duration-500 hover:ease-in;
+  .card-hover-home {
+    @apply transform hover:-translate-y-6 transition duration-500 hover:before:content-[attr(before)] before:ease-out before:transition before:duration-500 hover:before:absolute hover:before:-bottom-8 hover:before:left-1/2 hover:before:-translate-x-1/2 hover:drop-shadow-xl;
   }
 }
 

@@ -1,19 +1,10 @@
-import Dragger from "react-physics-dragger";
 import { projectData } from "../../lib/projects";
-import SectionProjectItem from "./SectionProjectItem";
+import ProjectList from "../projects/ProjectList";
 
+// projectData as a parameter
 const SectionProjectList = () => {
-  return (
-    <div className="clip-inset mt-7">
-      <Dragger>
-        <div className="flex items-end gap-5 pt-12 pb-12">
-          {projectData.map((project) => {
-            return <SectionProjectItem key={project.id} project={project} />;
-          })}
-        </div>
-      </Dragger>
-    </div>
-  );
+  const projects = projectData.slice(0, 5);
+  return <ProjectList projects={projects} />;
 };
 
 export default SectionProjectList;
