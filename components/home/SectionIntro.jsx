@@ -12,7 +12,7 @@ const SectionIntro = () => {
           Finland. I enjoy building web applications and analyzing user
           experience based on data.
         </div>
-        <div className="w-[120px] sm:w-[176px] relative sm:mb-8 mr-auto">
+        <div className="w-[120px] sm:w-[176px] relative  sm:mb-8 mr-auto ">
           <Image
             className="rounded-full"
             src={profilePic}
