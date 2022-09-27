@@ -11,11 +11,11 @@ const Sidebar = () => {
         <nav>
           <ul className="flex flex-col gap-12">
             <li
-              className={styles.navAnimation}
+              className={`${styles.navAnimation}`}
               style={{ animationDelay: "1000ms" }}
             >
               <Link href="/">
-                <a>HOME</a>
+                <a className="hover:opacity-50">HOME</a>
               </Link>
             </li>
             <li
@@ -25,6 +25,7 @@ const Sidebar = () => {
               <a
                 href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
                 target="_blank"
+                className="hover:opacity-50"
               >
                 CV
               </a>
@@ -34,7 +35,7 @@ const Sidebar = () => {
               style={{ animationDelay: "1200ms" }}
             >
               <Link href="/#projects">
-                <a>PROJECTS</a>
+                <a className="hover:opacity-50">PROJECTS</a>
               </Link>
             </li>
             <li
@@ -42,7 +43,7 @@ const Sidebar = () => {
               style={{ animationDelay: "1300ms" }}
             >
               <Link href="/blog">
-                <a>BLOG</a>
+                <a className="hover:opacity-50">BLOG</a>
               </Link>
             </li>
           </ul>
@@ -54,7 +55,11 @@ const Sidebar = () => {
             className={styles.socialAnimation}
             style={{ animationDelay: "2500ms" }}
           >
-            <a href="https://www.linkedin.com/in/cheahpark/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/cheahpark/"
+              target="_blank"
+              className="hover:opacity-50"
+            >
               <LinkedInIcon />
             </a>
           </div>
@@ -62,7 +67,11 @@ const Sidebar = () => {
             className={styles.socialAnimation}
             style={{ animationDelay: "2600ms" }}
           >
-            <a href="https://github.com/chepark" target="_blank">
+            <a
+              href="https://github.com/chepark"
+              target="_blank"
+              className="hover:opacity-50"
+            >
               <GithubIcon width="35" height="34.14" />
             </a>
           </div>
@@ -70,7 +79,11 @@ const Sidebar = () => {
             className={styles.socialAnimation}
             style={{ animationDelay: "2700ms" }}
           >
-            <a href="mailto:parkchaeah331@gmail.com" target="_blank">
+            <a
+              href="mailto:parkchaeah331@gmail.com"
+              target="_blank"
+              className="hover:opacity-50"
+            >
               <EmailIcon />
             </a>
           </div>
@@ -78,7 +91,11 @@ const Sidebar = () => {
             className={styles.socialAnimation}
             style={{ animationDelay: "2800ms" }}
           >
-            <a href="https://dev.to/birdy" target="_blank">
+            <a
+              href="https://dev.to/birdy"
+              target="_blank"
+              className="hover:opacity-50"
+            >
               <DevToIcon />
             </a>
           </div>
