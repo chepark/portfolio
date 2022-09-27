@@ -24,7 +24,12 @@ const SectionIntro = () => {
       </div>
       <div>
         <button className="px-3 py-1.5 mt-5 md:mt-0 text-white bg-primary-black rounded-md">
-          Check My CV
+          <a
+            href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
+            target="_blank"
+          >
+            Check My CV
+          </a>
         </button>
       </div>
     </>

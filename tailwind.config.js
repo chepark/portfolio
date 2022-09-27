@@ -23,6 +23,15 @@ module.exports = {
         ibm: ["IBM Plex Sans", "sans-serif"],
         righteous: ["Righteous", "cursive"],
       },
+      animation: {
+        "main-load": "main-load 1s ease-in-out",
+      },
+      keyframes: {
+        "main-load": {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+      },
       typography: {
         DEFAULT: {
           css: {

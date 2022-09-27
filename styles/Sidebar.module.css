@@ -1,0 +1,60 @@
+.navAnimation {
+  animation-name: slideIn;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  transform: translateX(-1000%);
+}
+
+.socialAnimation {
+  animation-name: popUp;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+
+  transform: scale(0);
+  transform-origin: center center;
+}
+
+.lineAnimation {
+  animation-name: slideUp;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  transform: translateY(1000%);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-1000%);
+    opacity: 0;
+    transition: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    transition: ease-out;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(1000%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0);
+    opacity: (0);
+    transition: ease-in;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: (1);
+    transition: ease-out;
+  }
+}
