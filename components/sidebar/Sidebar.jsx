@@ -108,19 +108,44 @@ const Sidebar = () => {
       </div>
       <div className="flex flex-row justify-center visible gap-5 pt-10 md:hidden">
         <Link href="/">
-          <div className="text-sm">HOME</div>
+          <div
+            className={`text-sm ${styles.mobileNavAnimation}`}
+            style={{ animationDelay: "1000ms" }}
+          >
+            HOME
+          </div>
         </Link>
         <Link href="/#projects">
-          <div>PROJECTS</div>
+          <div
+            className={`text-sm ${styles.mobileNavAnimation}`}
+            style={{ animationDelay: "1100ms" }}
+          >
+            PROJECTS
+          </div>
         </Link>
         <Link href="/blog">
-          <div>BLOG</div>
+          <div
+            className={`text-sm ${styles.mobileNavAnimation}`}
+            style={{ animationDelay: "1200ms" }}
+          >
+            BLOG
+          </div>
         </Link>
         <Link href="/blog">
-          <div>CV</div>
+          <div
+            className={`text-sm ${styles.mobileNavAnimation}`}
+            style={{ animationDelay: "1300ms" }}
+          >
+            CV
+          </div>
         </Link>
         <Link href="/blog">
-          <div>GITHUB</div>
+          <div
+            className={`text-sm ${styles.mobileNavAnimation}`}
+            style={{ animationDelay: "1400ms" }}
+          >
+            GITHUB
+          </div>
         </Link>
       </div>
     </div>
