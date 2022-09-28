@@ -1,11 +1,31 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { LinkedInIcon, GithubIcon, EmailIcon, DevToIcon } from "../icons";
-import styles from "../../styles/sidebar.module.css";
+import { useRouter } from "next/router";
+import styles from "../../styles/Sidebar.module.css";
+import MobileNav from "./MobileNav";
+import SocialLink from "./SocialLink";
+import { socialData } from "../../lib/socials";
 
 const Sidebar = () => {
+  const { asPath } = useRouter();
+  const [currentPath, setCurrentPath] = useState({
+    home: true,
+    projects: false,
+    blog: false,
+  });
+
+  useEffect(() => {
+    if (asPath === "/")
+      setCurrentPath({ home: true, projects: false, blog: false });
+
+    if (asPath === "/#projects")
+      setCurrentPath({ home: false, projects: true, blog: false });
+
+    if (asPath === "/blog")
+      setCurrentPath({ home: false, projects: false, blog: true });
+  }, [asPath]);
+
   return (
-    // add classname for styling on <a> tag.
-    // MENU FOR TABLETS AND PC
     <div className="relative">
       <div className="md:z-[100] flex-col justify-between hidden h-screen px-10 pt-10 md:flex bg-white fixed top-0">
         <nav>
@@ -15,90 +35,70 @@ const Sidebar = () => {
               style={{ animationDelay: "1000ms" }}
             >
               <Link href="/">
-                <a className="hover:opacity-50">HOME</a>
+                <a
+                  className={`hover:font-semibold ${
+                    currentPath.home ? "font-semibold" : ""
+                  } `}
+                >
+                  HOME
+                </a>
               </Link>
             </li>
             <li
               className={styles.navAnimation}
               style={{ animationDelay: "1100ms" }}
             >
-              <a
-                href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
-                target="_blank"
-                className="hover:opacity-50"
-              >
-                CV
-              </a>
+              <Link href="/#projects">
+                <a
+                  className={`hover:font-semibold ${
+                    currentPath.projects ? "font-semibold" : ""
+                  }`}
+                >
+                  PROJECTS
+                </a>
+              </Link>
             </li>
             <li
               className={styles.navAnimation}
               style={{ animationDelay: "1200ms" }}
             >
-              <Link href="/#projects">
-                <a className="hover:opacity-50">PROJECTS</a>
+              <Link href="/blog">
+                <a
+                  className={`hover:font-semibold ${
+                    currentPath.blog ? "font-semibold" : ""
+                  }`}
+                >
+                  BLOG
+                </a>
               </Link>
             </li>
             <li
               className={styles.navAnimation}
               style={{ animationDelay: "1300ms" }}
             >
-              <Link href="/blog">
-                <a className="hover:opacity-50">BLOG</a>
-              </Link>
+              <a
+                href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
+                target="_blank"
+                className={`hover:font-semibold `}
+              >
+                CV
+              </a>
             </li>
           </ul>
         </nav>
 
         {/* SOCIAL LINKS */}
         <div className="flex flex-col gap-8 w-fit">
-          <div
-            className={styles.socialAnimation}
-            style={{ animationDelay: "2500ms" }}
-          >
-            <a
-              href="https://www.linkedin.com/in/cheahpark/"
-              target="_blank"
-              className="hover:opacity-50"
-            >
-              <LinkedInIcon />
-            </a>
-          </div>
-          <div
-            className={styles.socialAnimation}
-            style={{ animationDelay: "2600ms" }}
-          >
-            <a
-              href="https://github.com/chepark"
-              target="_blank"
-              className="hover:opacity-50"
-            >
-              <GithubIcon width="35" height="34.14" />
-            </a>
-          </div>
-          <div
-            className={styles.socialAnimation}
-            style={{ animationDelay: "2700ms" }}
-          >
-            <a
-              href="mailto:parkchaeah331@gmail.com"
-              target="_blank"
-              className="hover:opacity-50"
-            >
-              <EmailIcon />
-            </a>
-          </div>
-          <div
-            className={styles.socialAnimation}
-            style={{ animationDelay: "2800ms" }}
-          >
-            <a
-              href="https://dev.to/birdy"
-              target="_blank"
-              className="hover:opacity-50"
-            >
-              <DevToIcon />
-            </a>
-          </div>
+          {socialData.map((social) => {
+            return (
+              <SocialLink
+                key={social.id}
+                url={social.url}
+                icon={social.iconComponent}
+                animationDelay={social.animationDelay}
+              />
+            );
+          })}
           <div
             className={`relative h-44 ${styles.lineAnimation}`}
             style={{ animationDelay: "2000ms" }}
@@ -123,48 +123,7 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-row justify-center visible gap-5 pt-10 md:hidden">
-        <Link href="/">
-          <div
-            className={`text-sm ${styles.mobileNavAnimation}`}
-            style={{ animationDelay: "1000ms" }}
-          >
-            HOME
-          </div>
-        </Link>
-        <Link href="/#projects">
-          <div
-            className={`text-sm ${styles.mobileNavAnimation}`}
-            style={{ animationDelay: "1100ms" }}
-          >
-            PROJECTS
-          </div>
-        </Link>
-        <Link href="/blog">
-          <div
-            className={`text-sm ${styles.mobileNavAnimation}`}
-            style={{ animationDelay: "1200ms" }}
-          >
-            BLOG
-          </div>
-        </Link>
-        <Link href="/blog">
-          <div
-            className={`text-sm ${styles.mobileNavAnimation}`}
-            style={{ animationDelay: "1300ms" }}
-          >
-            CV
-          </div>
-        </Link>
-        <Link href="/blog">
-          <div
-            className={`text-sm ${styles.mobileNavAnimation}`}
-            style={{ animationDelay: "1400ms" }}
-          >
-            GITHUB
-          </div>
-        </Link>
-      </div>
+      <MobileNav />
     </div>
   );
 };

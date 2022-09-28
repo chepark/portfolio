@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { getPostBySlug, getSlugs } from "../../../lib/posts";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -10,12 +11,16 @@ import BackArrowIcon from "../../../components/icons/BackArrowIcon";
 import AuthorDate from "../../../components/blog/AuthorDate";
 
 const PostDetail = ({ post }) => {
+  const router = useRouter();
+
   return (
     <>
       <Head>
         <title>{post.meta.title}</title>
       </Head>
-      <BackArrowIcon />
+      <div className="cursor-pointer" onClick={router.back}>
+        <BackArrowIcon />
+      </div>
       <div className="mt-16">
         <h1 className="font-bold">{post.meta.title}</h1>
         <AuthorDate date={post.meta.date} />

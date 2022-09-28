@@ -1,0 +1,17 @@
+.btnCV {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #d69eeb, #7694f7) border-box;
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btnCV:hover {
+  text-decoration: none;
+  scale: 1.02;
+}

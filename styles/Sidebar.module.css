@@ -25,7 +25,7 @@
   animation-name: slideDown;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
-  transform: translateY(1000%);
+  transform: translateY(-1000%);
 }
 
 @keyframes slideIn {

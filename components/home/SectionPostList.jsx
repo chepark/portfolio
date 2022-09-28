@@ -9,7 +9,7 @@ const SectionPostList = ({ postsMeta }) => {
           return (
             <Link key={meta.id} href={`/blog/${meta.slug}`}>
               <li>
-                <div className="flex flex-col justify-between py-3 border-b md:items-center sm:items-end list-grow sm:flex-row hover:opacity-50">
+                <div className="flex flex-col justify-between py-3 border-b md:items-center sm:items-end list-grow sm:flex-row">
                   <div className="text-lg font-semibold ">{meta.title}</div>
                   <div className="sm:mt-0">{meta.date}</div>
                 </div>

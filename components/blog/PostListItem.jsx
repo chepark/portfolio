@@ -6,7 +6,7 @@ const PostListItem = ({ meta }) => {
   return (
     <>
       <Link href={`/blog/${slug}`}>
-        <div className="my-10 cursor-pointer">
+        <div className="my-10 cursor-pointer hover:scale-[1.01] hover:duration-300 hover:ease-in-out">
           <div className="flex flex-col justify-between md:flex-row">
             <h3>{title}</h3>
             <div className="text-stone-500">{date}</div>

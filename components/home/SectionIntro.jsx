@@ -1,5 +1,6 @@
 import Image from "next/image";
 import profilePic from "../../public/me.png";
+import styles from "../../styles/SectionIntro.module.css";
 
 const SectionIntro = () => {
   return (
@@ -23,7 +24,9 @@ const SectionIntro = () => {
         </div>
       </div>
       <div>
-        <button className="px-3 py-1.5 mt-5 md:mt-0 text-white bg-primary-black rounded-md">
+        <button
+          className={`px-3 py-1.5 mt-5 md:mt-0 text-primary-black rounded-md ${styles.btnCV}`}
+        >
           <a
             href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
             target="_blank"
