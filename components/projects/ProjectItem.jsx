@@ -4,7 +4,7 @@ import Link from "next/link";
 import ProjectItemMeta from "./ProjectItemMeta";
 
 const ProjectItem = ({ project }) => {
-  const imgDimension =
+  const dimension =
     project.imageRatio == "landscape" ? "w-80 h-56" : "w-56 h-80";
 
   const [isMouseOver, setIsMouseOver] = useState(false);
@@ -12,7 +12,7 @@ const ProjectItem = ({ project }) => {
   return (
     <div className="flex flex-col">
       <button
-        className={`card-hover-home ${imgDimension} relative`}
+        className={`card-hover-home ${dimension} relative`}
         onMouseOver={() => {
           setIsMouseOver(true);
         }}
@@ -25,7 +25,11 @@ const ProjectItem = ({ project }) => {
             <Image src={`/${project.id}.jpg`} layout="fill" />
           </a>
         </Link>
-        <ProjectItemMeta project={project} mouseOver={isMouseOver} />
+        <ProjectItemMeta
+          project={project}
+          mouseOver={isMouseOver}
+          dimension={dimension}
+        />
       </button>
     </div>
   );

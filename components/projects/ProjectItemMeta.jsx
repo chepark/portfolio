@@ -1,11 +1,49 @@
-const ProjectItemMeta = ({ project, mouseOver }) => {
+import { useState } from "react";
+import { ExternalLinkIcon, GithubLinkIcon } from "../icons";
+
+const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
+  const [onIcon, setOnIcon] = useState({ github: false, link: false });
+
   return (
     <div
-      className={`absolute top-0 bg-black text-white w-full h-full opacity-50 
-        flex flex-col
+      className={`absolute top-0
+        flex flex-col gap-3 justify-center items-center
+        ${dimension}
         ${mouseOver ? "block" : "hidden"}`}
+      style={{ backgroundColor: "rgba(82,82,82, .5)" }}
     >
-      <div>{project.title}</div>
+      <div
+        className="w-full text-lg text-white"
+        style={{ wordBreak: "break-word", whiteSpace: "pre-line" }}
+      >
+        {project.title.toUpperCase()}
+      </div>
+      <div className={`flex flex-row items-center justify-center gap-5 `}>
+        <div
+          onMouseOver={() => {
+            setOnIcon({ github: true, link: false });
+          }}
+          onMouseOut={() => {
+            setOnIcon({ github: false, link: false });
+          }}
+        >
+          <a href={project.github} target="_blank" aria-label="Github Repo">
+            <GithubLinkIcon onIcon={onIcon.github} />
+          </a>
+        </div>
+        <div
+          onMouseOver={() => {
+            setOnIcon({ github: false, link: true });
+          }}
+          onMouseOut={() => {
+            setOnIcon({ github: false, link: false });
+          }}
+        >
+          <a href={project.url} target="_blank" aria-label="Project Url">
+            <ExternalLinkIcon onIcon={onIcon.link} />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

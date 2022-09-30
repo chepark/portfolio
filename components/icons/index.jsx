@@ -16,3 +16,5 @@ export { default as ReactIcon } from "./ReactIcon";
 export { default as RightArrowIcon } from "./RightArrowIcon";
 export { default as ScssIcon } from "./ScssIcon";
 export { default as TailwindCssIcon } from "./TailwindCssIcon";
+export { default as GithubLinkIcon } from "./GithubLinkIcon";
+export { default as ExternalLinkIcon } from "./ExternalLinkIcon";
