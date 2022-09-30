@@ -28,7 +28,7 @@ const MobileNav = () => {
           BLOG
         </div>
       </Link>
-      <a href="https://github.com/chepark" target="_blank">
+      <a href="https://github.com/chepark" target="_blank" area-label="Github">
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
           style={{ animationDelay: "1300ms" }}
@@ -39,6 +39,7 @@ const MobileNav = () => {
       <a
         href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
         target="_blank"
+        aria-label="CV"
       >
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}

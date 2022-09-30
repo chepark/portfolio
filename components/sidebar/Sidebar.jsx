@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "../../styles/Sidebar.module.css";
+import Link from "next/link";
 import MobileNav from "./MobileNav";
 import SocialLink from "./SocialLink";
-import { socialData } from "../../lib/socials";
+import { socialData, CV_URL } from "../../lib/socials";
+import styles from "../../styles/Sidebar.module.css";
 
 const Sidebar = () => {
   const { asPath } = useRouter();
@@ -39,6 +39,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.home ? "font-semibold" : ""
                   } `}
+                  area-label="Home"
                 >
                   HOME
                 </a>
@@ -53,6 +54,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.projects ? "font-semibold" : ""
                   }`}
+                  area-label="Projects"
                 >
                   PROJECTS
                 </a>
@@ -67,6 +69,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.blog ? "font-semibold" : ""
                   }`}
+                  area-label="Blog"
                 >
                   BLOG
                 </a>
@@ -77,8 +80,9 @@ const Sidebar = () => {
               style={{ animationDelay: "1300ms" }}
             >
               <a
-                href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
+                href={CV_URL}
                 target="_blank"
+                aria-label="CV"
                 className={`hover:font-semibold `}
               >
                 CV
@@ -94,6 +98,7 @@ const Sidebar = () => {
               <SocialLink
                 key={social.id}
                 url={social.url}
+                areaLabel={social.areaLabel}
                 icon={social.iconComponent}
                 animationDelay={social.animationDelay}
               />

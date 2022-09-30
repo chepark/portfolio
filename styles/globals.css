@@ -29,12 +29,8 @@
     @apply cursor-pointer hover:scale-[1.01] transition duration-300 hover:ease-in-out;
   }
 
-  .card-grayScale {
-    @apply hover:grayscale grayscale-0;
-  }
-
   .card-hover-home {
-    @apply transform hover:-translate-y-6 transition duration-500 hover:before:content-[attr(before)] before:ease-out before:transition before:duration-500 hover:before:absolute hover:before:-bottom-8 hover:before:left-1/2 hover:before:-translate-x-1/2 hover:drop-shadow-xl;
+    @apply transition duration-500 transform hover:-translate-y-6 before:ease-out before:transition before:duration-500 hover:before:absolute hover:before:-bottom-8 hover:before:left-1/2 hover:before:-translate-x-1/2 hover:drop-shadow-xl;
   }
 }
 

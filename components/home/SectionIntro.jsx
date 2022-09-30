@@ -1,6 +1,7 @@
 import Image from "next/image";
 import profilePic from "../../public/me.png";
 import styles from "../../styles/SectionIntro.module.css";
+import { CV_URL } from "../../lib/socials";
 
 const SectionIntro = () => {
   return (
@@ -27,10 +28,7 @@ const SectionIntro = () => {
         <button
           className={`px-3 py-1.5 mt-5 md:mt-0 text-primary-black rounded-md ${styles.btnCV}`}
         >
-          <a
-            href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
-            target="_blank"
-          >
+          <a href={CV_URL} area-label="CV" target="_blank">
             Check My CV
           </a>
         </button>
