@@ -12,12 +12,12 @@ const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
         ${mouseOver ? "block" : "hidden"}`}
       style={{ backgroundColor: "rgba(82,82,82, .5)" }}
     >
-      <div
+      {/* <div
         className="w-full text-lg text-white"
         style={{ wordBreak: "break-word", whiteSpace: "pre-line" }}
       >
         {project.title.toUpperCase()}
-      </div>
+      </div> */}
       <div className={`flex flex-row items-center justify-center gap-5 `}>
         <div
           onMouseOver={() => {
