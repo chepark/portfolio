@@ -39,7 +39,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.home ? "font-semibold" : ""
                   } `}
-                  areaLabel="Home"
+                  ariaLabel="Home"
                 >
                   HOME
                 </a>
@@ -54,7 +54,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.projects ? "font-semibold" : ""
                   }`}
-                  areaLabel="Projects"
+                  ariaLabel="Projects"
                 >
                   PROJECTS
                 </a>
@@ -69,7 +69,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.blog ? "font-semibold" : ""
                   }`}
-                  areaLabel="Blog"
+                  ariaLabel="Blog"
                 >
                   BLOG
                 </a>
@@ -99,7 +99,7 @@ const Sidebar = () => {
               <SocialLink
                 key={social.id}
                 url={social.url}
-                areaLabel={social.areaLabel}
+                ariaLabel={social.areaLabel}
                 icon={social.iconComponent}
                 animationDelay={social.animationDelay}
               />

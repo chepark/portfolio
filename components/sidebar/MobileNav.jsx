@@ -32,7 +32,7 @@ const MobileNav = () => {
         href="https://github.com/chepark"
         target="_blank"
         rel="noopener noreferrer"
-        areaLabel="Github"
+        ariaLabel="Github"
       >
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}

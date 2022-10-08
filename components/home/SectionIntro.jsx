@@ -30,7 +30,7 @@ const SectionIntro = () => {
         >
           <a
             href={CV_URL}
-            area-label="CV"
+            ariaLabel="CV"
             target="_blank"
             rel="noopener noreferrer"
           >
