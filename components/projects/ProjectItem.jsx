@@ -21,7 +21,11 @@ const ProjectItem = ({ project }) => {
         }}
       >
         <Link href={project.url} passHref>
-          <a target="_blank" area-label="Personal Project">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            area-label="Personal Project"
+          >
             <Image src={`/${project.id}.png`} layout="fill" />
           </a>
         </Link>

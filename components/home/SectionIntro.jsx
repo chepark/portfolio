@@ -28,7 +28,12 @@ const SectionIntro = () => {
         <button
           className={`px-3 py-1.5 mt-5 md:mt-0 text-primary-black rounded-md ${styles.btnCV}`}
         >
-          <a href={CV_URL} area-label="CV" target="_blank">
+          <a
+            href={CV_URL}
+            area-label="CV"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Check My CV
           </a>
         </button>

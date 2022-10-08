@@ -82,6 +82,7 @@ const Sidebar = () => {
               <a
                 href={CV_URL}
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="CV"
                 className={`hover:font-semibold `}
               >

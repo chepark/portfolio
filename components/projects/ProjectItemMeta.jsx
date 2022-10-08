@@ -27,7 +27,12 @@ const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
             setOnIcon({ github: false, link: false });
           }}
         >
-          <a href={project.github} target="_blank" aria-label="Github Repo">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Github Repo"
+          >
             <GithubLinkIcon onIcon={onIcon.github} />
           </a>
         </div>
@@ -39,7 +44,12 @@ const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
             setOnIcon({ github: false, link: false });
           }}
         >
-          <a href={project.url} target="_blank" aria-label="Project Url">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Project Url"
+          >
             <ExternalLinkIcon onIcon={onIcon.link} />
           </a>
         </div>
