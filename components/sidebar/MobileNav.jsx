@@ -32,7 +32,7 @@ const MobileNav = () => {
         href="https://github.com/chepark"
         target="_blank"
         rel="noopener noreferrer"
-        ariaLabel="Github"
+        aria-label="Github"
       >
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
@@ -45,7 +45,7 @@ const MobileNav = () => {
         href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
         target="_blank"
         rel="noopener noreferrer"
-        ariaLabel="CV"
+        aria-label="CV"
       >
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}

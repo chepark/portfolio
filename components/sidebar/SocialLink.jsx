@@ -9,7 +9,7 @@ const SocialLink = ({ url, icon, animationDelay, areaLabel }) => {
         target="_blank"
         rel="noopener noreferrer"
         className="hover:opacity-50"
-        ariaLabel={areaLabel}
+        aria-label={areaLabel}
       >
         {icon}
       </a>

@@ -24,7 +24,7 @@ const ProjectItem = ({ project }) => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            ariaLabel="Personal Project"
+            aria-label="Personal Project"
           >
             <Image src={`/${project.id}.png`} layout="fill" />
           </a>

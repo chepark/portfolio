@@ -39,7 +39,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.home ? "font-semibold" : ""
                   } `}
-                  ariaLabel="Home"
+                  aria-label="Home"
                 >
                   HOME
                 </a>
@@ -54,7 +54,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.projects ? "font-semibold" : ""
                   }`}
-                  ariaLabel="Projects"
+                  aria-label="Projects"
                 >
                   PROJECTS
                 </a>
@@ -69,7 +69,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.blog ? "font-semibold" : ""
                   }`}
-                  ariaLabel="Blog"
+                  aria-label="Blog"
                 >
                   BLOG
                 </a>
@@ -83,7 +83,7 @@ const Sidebar = () => {
                 href={CV_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                ariaLabel="CV"
+                aria-label="CV"
                 className={`hover:font-semibold `}
               >
                 CV
@@ -99,7 +99,7 @@ const Sidebar = () => {
               <SocialLink
                 key={social.id}
                 url={social.url}
-                ariaLabel={social.areaLabel}
+                aria-label={social.areaLabel}
                 icon={social.iconComponent}
                 animationDelay={social.animationDelay}
               />
