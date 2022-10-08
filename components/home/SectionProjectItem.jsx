@@ -19,7 +19,7 @@ const SectionProjectItem = ({ project }) => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            area-label="Personal Project"
+            aria-label="Personal Project"
           >
             <Image src={`/${project.id}.jpg`} layout="fill" />
           </a>
