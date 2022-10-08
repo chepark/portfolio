@@ -31,7 +31,7 @@ const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Github Repo"
+            ariaLabel="Github Repo"
           >
             <GithubLinkIcon onIcon={onIcon.github} />
           </a>
@@ -48,7 +48,7 @@ const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Project Url"
+            ariaLabel="Project Url"
           >
             <ExternalLinkIcon onIcon={onIcon.link} />
           </a>

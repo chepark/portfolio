@@ -39,7 +39,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.home ? "font-semibold" : ""
                   } `}
-                  area-label="Home"
+                  areaLabel="Home"
                 >
                   HOME
                 </a>
@@ -54,7 +54,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.projects ? "font-semibold" : ""
                   }`}
-                  area-label="Projects"
+                  areaLabel="Projects"
                 >
                   PROJECTS
                 </a>
@@ -69,7 +69,7 @@ const Sidebar = () => {
                   className={`hover:font-semibold ${
                     currentPath.blog ? "font-semibold" : ""
                   }`}
-                  area-label="Blog"
+                  areaLabel="Blog"
                 >
                   BLOG
                 </a>
@@ -83,7 +83,7 @@ const Sidebar = () => {
                 href={CV_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="CV"
+                ariaLabel="CV"
                 className={`hover:font-semibold `}
               >
                 CV

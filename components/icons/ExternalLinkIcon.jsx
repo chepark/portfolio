@@ -14,9 +14,9 @@ const ExternalLinkIcon = ({ onIcon }) => {
           transform="translate(4)"
           fill="none"
           stroke={`${onIcon ? "#000" : "#fff"}`}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
         <path
           id="Path_206"
@@ -25,9 +25,9 @@ const ExternalLinkIcon = ({ onIcon }) => {
           transform="translate(0 0)"
           fill="none"
           stroke={`${onIcon ? "#000" : "#fff"}`}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
         <path
           id="Path_207"
@@ -36,9 +36,9 @@ const ExternalLinkIcon = ({ onIcon }) => {
           transform="translate(4 0)"
           fill="none"
           stroke={`${onIcon ? "#000" : "#fff"}`}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
       </g>
     </svg>

@@ -13,9 +13,9 @@ const GithubLinkIcon = ({ onIcon }) => {
         transform="translate(-0.787 0.057)"
         fill="none"
         stroke={`${onIcon ? "#000" : "#fff"}`}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
       />
     </svg>
   );

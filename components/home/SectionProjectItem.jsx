@@ -13,8 +13,7 @@ const SectionProjectItem = ({ project }) => {
   return (
     <div className="relative">
       <button
-        before={project.title}
-        className={`${imgDimensionClass} hover:drop-shadow-xl card-transform card-transition card-shadow  relative  card-before block`}
+        className={`${imgDimensionClass} hover:drop-shadow-xl card-transform card-transition card-shadow  relative block`}
       >
         <Link href={project.url} passHref>
           <a
