@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "../../styles/Sidebar.module.css";
+import { CV_URL } from "../../lib/socials";
 
 const MobileNav = () => {
   return (
@@ -42,7 +43,7 @@ const MobileNav = () => {
         </div>
       </a>
       <a
-        href="https://www.notion.so/Chaeah-Park-Front-end-Developer-4194feb829774cdf91c16d5920cc5007"
+        href={CV_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="CV"
