@@ -1,3 +1,3 @@
 # Portfolio website.
 
-Should mention about copyright.
+www.chaeah.me
