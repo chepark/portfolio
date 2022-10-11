@@ -61,7 +61,7 @@ code {
   border-radius: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -69,4 +69,4 @@ code {
     color: white;
     background: #363434;
   }
-}
+} */
