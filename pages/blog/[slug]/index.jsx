@@ -9,6 +9,7 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
 import BackArrowIcon from "../../../components/icons/BackArrowIcon";
 import AuthorDate from "../../../components/blog/AuthorDate";
+import formatDate from "../../../lib/formatDate";
 
 const PostDetail = ({ post }) => {
   const router = useRouter();
@@ -23,7 +24,7 @@ const PostDetail = ({ post }) => {
       </div>
       <div className="mt-16">
         <h1 className="font-bold">{post.meta.title}</h1>
-        <AuthorDate date={post.meta.date} />
+        <AuthorDate date={formatDate(post.meta.date)} />
       </div>
       <div className="prose prose-slate max-w-none">
         <MDXRemote {...post.source} />

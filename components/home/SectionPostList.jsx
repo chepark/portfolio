@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import formatDate from "../../lib/formatDate";
 
 const SectionPostList = ({ postsMeta }) => {
   return (
@@ -11,7 +12,7 @@ const SectionPostList = ({ postsMeta }) => {
               <li>
                 <div className="flex flex-col justify-between py-3 border-b md:items-center sm:items-end list-grow sm:flex-row">
                   <div className="text-lg font-semibold ">{meta.title}</div>
-                  <div className="sm:mt-0">{meta.date}</div>
+                  <div className="sm:mt-0">{formatDate(meta.date)}</div>
                 </div>
               </li>
             </Link>
