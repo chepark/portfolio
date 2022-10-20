@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import ProjectItem from "./ProjectItem";
 import Dragger from "react-physics-dragger";
 

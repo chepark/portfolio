@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styles from "../../styles/Sidebar.module.css";
 
 const SocialLink = ({ url, icon, animationDelay, areaLabel }) => {

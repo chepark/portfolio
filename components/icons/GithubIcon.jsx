@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 const GithubIcon = ({ width = "50", height = "48.77" }) => {
   return (
