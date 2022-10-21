@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import SectionIntro from "../../components/home/SectionIntro.jsx";
 import { CV_URL } from "../../lib/socials";
 
