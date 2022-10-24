@@ -10,7 +10,7 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
 ${slugs
   .map((slug) => {
     return `<url>
-              <loc>${`http://localhost:3000/${slug}`}</loc>
+              <loc>${`https://www.chaeah.me/${slug}`}</loc>
           </url>`;
   })
   .join("")}
