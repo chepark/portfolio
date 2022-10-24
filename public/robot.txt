@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.chaeah.me/sitemap.xml
