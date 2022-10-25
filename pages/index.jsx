@@ -21,7 +21,7 @@ export default function Home({ postsMeta }) {
 
       <div>
         <div className="flex items-center justify-between " id="about">
-          <PageHeader title="Cheah Park" />
+          <PageHeader title="Chaeah Park" />
         </div>
 
         <div>
