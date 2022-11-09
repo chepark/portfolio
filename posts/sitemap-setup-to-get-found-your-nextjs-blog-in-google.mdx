@@ -10,4 +10,139 @@ date: 2022-10-24
 excerpt: This article explains how to set up the sitemap of your next.js project to get found in Google.
 ---
 
-<p>If your site is not showing up in Google, </p>
+<p>
+  Google Search Console is a tool to help Google discover your website and
+  contents. Your website needs to go through the following steps to be found in
+  Google Search.
+</p>
+<ol>
+  <li>Verify the website in Google Search Console</li>
+  <li>Create the sitemap.xml.jsx</li>
+  <li>Submit the sitemap to Google</li>
+</ol>
+
+## 1. Verify the website in Google Search Console
+
+### 1.1 Create account and start to add your website
+
+<p>
+  You need an account in Google Search Console to add your website. First,
+  create your account with [Google Search
+  Console](https://search.google.com/search-console/about) if you don't have any
+  accounts.
+</p>
+![Click +Add Property](https://i.postimg.cc/05VPDRjQ/add-website.png){" "}
+
+### 1.2 Add your website in Google Search Console
+
+<p>
+  On the top left corner, click the search bar and hit the click +Add property.
+  Type in the url of your website then click the Continue button.
+</p>
+![Add the url of your website](https://i.postimg.cc/59SqmpWj/add-url.jpg){" "}
+
+### 1.3 Verify domain ownership via DNS record
+
+<p>
+  Copy the TXT record and add it to the domain name provider of your website. In
+  this blog, I demostrate with NameCheap since it's the hosting company that I
+  use.
+</p>
+![Copy the TXT record from Google Search Console](https://i.postimg.cc/cJd86G6m/verify-dns.png)
+
+### 1.4 Go to your website domain name provider
+
+<p>
+  Go to the [NameCheap](https://www.namecheap.com/) and click the Account menu
+  on the top right corner. Then move to the Dashboard and click the manage
+  button next to your target url.
+</p>
+![Click the manage button](https://i.postimg.cc/wMtz92Jz/click-manage.png)
+
+### 1.5 Add TXT record
+
+<p>
+  Open the Advanced DNS tab and click the ADD NEW RECORD button on the bottom.
+  Then choose TXT Record as a type, @ as a host, and paste the TXT records
+  copied from Google Search Console into the value.
+</p>
+![Add the TXT record](https://i.postimg.cc/gcyQ6fz7/add-record.png)
+
+### 1.6 Verify in Google Search Console
+
+<p>
+  Once you added the TXT record in your domain name provider, go back to Google
+  Search Console and click the verify button.
+</p>
+![Click the verify button.](https://i.postimg.cc/90GYv5Mq/verify-click.png)
+
+## 2. Add a sitemap.xml.jsx in your project
+
+<p>
+  There are two options to add a sitemap. If your website is simple and static,
+  you can manually create <code>sitemap.xml.jsx</code> in the
+  <code>public</code> directory of your website.
+</p>
+<p>
+  Another option is to use <code>getServerSideProps</code> if your site is
+  dynamic. In this blog I will cover the latter option.{" "}
+</p>
+
+<p>
+  Under the <code>pages</code> directory, create a new file{" "}
+  <code>sitemap.xml.jsx</code> such as <code>/pages/sitemap.xml.jsx</code>.
+</p>
+
+```javascript
+// getAllPosts generates all slugs for blog postings.
+import { getAllPosts } from "../lib/posts";
+
+const Sitemap = () => {
+  return null;
+};
+
+// Generate sitemap for all paths.
+const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${slugs
+  .map((slug) => {
+    return `<url>
+              <loc>${`https://www.chaeah.me/${slug}`}</loc>
+          </url>`;
+  })
+  .join("")}
+</urlset>`;
+
+export const getServerSideProps = async ({ res }) => {
+  const allPosts = getAllPosts();
+
+  // Generate all paths
+  const allPages = [
+    ...allPosts.map((post) => {
+      return `blog/${post.meta.slug}`;
+    }),
+    ...["", "#projects", "blog"],
+  ];
+
+  return {
+    props: {},
+  };
+};
+
+export default Sitemap;
+```
+
+<p>
+  Once you completed to add <code>sitemap.xml.jsx</code> file, try if the
+  sitemap is generated in your development mode. For example, go
+  http://localhost:3000/sitemap.xml and check if the sitemap is generated.
+</p>
+![Sitemap is generated.](https://iili.io/pyiGDJ.md.jpg)
+
+## 3. Submit the sitemap to Google Search Console
+
+<p>
+  Add your sitemap url to Google Search Console. That's it. It takes a few hours
+  until your website gets found in Google.
+</p>
+![Add sitemap in google](https://iili.io/pyiCc7.jpg)
