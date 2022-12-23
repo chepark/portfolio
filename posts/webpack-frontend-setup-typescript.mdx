@@ -1,0 +1,114 @@
+---
+id: 6
+title: Webpack setup for Frontend projects using Typescript and TailwindCSS
+tags:
+  - webpack
+  - typescript
+  - tailwindcss
+date: 2022-11-14
+excerpt: You will learn how to setup development environment with Webpack for TypeScript frontend projects.
+---
+
+I started to learn TypeScript by building a simple frontend project but it was
+challenging from the very beginning when I setup the development environment.
+
+The reasons are, first of all, I didn't have prior knowledge in bundling, Webpack,
+and any other build tools. Plus, it was hard to find right tutorials or resources for
+TypeScript frontend projects (without React) that actually work.
+
+After several days of research and experiement, I understand how Webpack works
+and how to setup development environment for TypeScript frontend projects.
+I write down this article to help people just like me who ...
+
+1. wants to build a typescript project with TypeScript (No React).
+2. wants to know about basics of how Webpack works.
+3. wants to learn about development environment setup for TypeScript frontend project.
+
+## 1. What is Webpack and how does it work?
+
+<p>
+  Webpack is a module bundler. Its main job is to bundle JavaScript files to use
+  in a browser. Also, Webpack transforms front-end assets such as HTML, CSS, and
+  images if loaders are included.
+</p>
+
+## Final directory and file structure
+
+```
+myApp/
+├─ dist/
+│ ├─ index.html
+│ ├─ bundle.js
+├─ src/
+│ ├─ index.html
+│ ├─ index.ts
+│ ├─ styles.css
+├─ node_modules/
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.js
+├─ tailwindcss.config.js
+├─ tsconfig.json
+├─ webpack.config.js
+```
+
+## Packages
+
+The following packages are needed for our project.
+
+-
+
+## loaders, plugins in Webpack
+
+## 1. Initialize the project
+
+Create a directory with the name of `myApp` and got to the project directory.
+
+```
+mkdir myApp
+cd myApp
+```
+
+With the following command line, create a `package.json`.
+
+```
+npm init -y
+```
+
+## 2. Setup to bundle .ts files.
+
+### 2-1. Install necessary packages to bundle TypeScript.
+
+```
+npm install webpack webpack-cli typescript ts-loader -D
+```
+
+You will see that `node_modules` is created and `ts-loader`, `typescript`,
+`webpack`, and `webpack-cli` are now in the `devDependencies` property in
+`package.json`
+
+![devDependencies](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/dffe156f-0d47-444f-8fda-b77eb4d277b0/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221116T102704Z&X-Amz-Expires=86400&X-Amz-Signature=d028111d34618b18f505aaba9c07b1aa6a65a62a71fc97a33cf3bc75744e90b7&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+
+### 2-2. Create /src/index.ts
+
+Create both `src` directory and `index.ts` in the project folder.
+
+```
+myApp/
+├─ src/
+│ ├─ index.ts
+├─ node_modules/
+├─ package-lock.json
+├─ package.json
+
+```
+
+### 2-3. Create webpack.config.js and setup
+
+### 2-4. Create tsconfig.json and setup
+
+### 2-5. Add npm script: start and buildin
+
+### 2-6. Start to build to test out
+
+![npm run build](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4e1d3b6d-c78e-4861-ba95-a338b4130596/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221116%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221116T121640Z&X-Amz-Expires=86400&X-Amz-Signature=e0ade733bdda1b9b2cc164444785b0e8916f7bf7479780dba5e16bf6cd1934d4&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
