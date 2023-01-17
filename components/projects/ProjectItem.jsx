@@ -26,7 +26,11 @@ const ProjectItem = ({ project }) => {
             rel="noopener noreferrer"
             aria-label="Personal Project"
           >
-            <Image src={`/${project.id}.png`} layout="fill" />
+            <Image
+              src={`/${project.id}.png`}
+              layout="fill"
+              alt={project.title}
+            />
           </a>
         </Link>
         <ProjectItemMeta
