@@ -27,7 +27,7 @@ const ProjectItem = ({ project }) => {
             aria-label="Personal Project"
           >
             <Image
-              src={`../../public/${project.id}.png`}
+              src={`/${project.id}.png`}
               layout="fill"
               alt={project.title}
             />
