@@ -13,40 +13,44 @@ const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
       style={{ backgroundColor: "rgba(82,82,82, .5)" }}
     >
       <div className={`flex flex-row items-center justify-center gap-5 `}>
-        <div
-          onMouseOver={() => {
-            setOnIcon({ github: true, link: false });
-          }}
-          onMouseOut={() => {
-            setOnIcon({ github: false, link: false });
-          }}
-        >
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Github Repo"
+        {project.github !== "" ? (
+          <div
+            onMouseOver={() => {
+              setOnIcon({ github: true, link: false });
+            }}
+            onMouseOut={() => {
+              setOnIcon({ github: false, link: false });
+            }}
           >
-            <GithubLinkIcon onIcon={onIcon.github} />
-          </a>
-        </div>
-        <div
-          onMouseOver={() => {
-            setOnIcon({ github: false, link: true });
-          }}
-          onMouseOut={() => {
-            setOnIcon({ github: false, link: false });
-          }}
-        >
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Project Url"
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Github Repo"
+            >
+              <GithubLinkIcon onIcon={onIcon.github} />
+            </a>
+          </div>
+        ) : null}
+        {project.url !== "" ? (
+          <div
+            onMouseOver={() => {
+              setOnIcon({ github: false, link: true });
+            }}
+            onMouseOut={() => {
+              setOnIcon({ github: false, link: false });
+            }}
           >
-            <ExternalLinkIcon onIcon={onIcon.link} />
-          </a>
-        </div>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Project Url"
+            >
+              <ExternalLinkIcon onIcon={onIcon.link} />
+            </a>
+          </div>
+        ) : null}
       </div>
     </div>
   );
