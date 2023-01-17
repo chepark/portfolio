@@ -14,7 +14,7 @@ const Projects = () => {
         subTitle="Some works that I've experimented and created."
       />
       <div className="flex flex-col justify-center h-screen">
-        <ProjectList projects={projectData} path={router.pathname} />
+        <ProjectList projects={projectData} />
       </div>
     </>
   );
