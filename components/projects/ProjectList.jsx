@@ -1,8 +1,9 @@
 import * as React from "react";
 import ProjectItem from "./ProjectItem";
 import Dragger from "react-physics-dragger";
+import { projectData as projects } from "../../lib/projects";
 
-const ProjectList = ({ projects }) => {
+const ProjectList = () => {
   return (
     <div className="clip-inset mt-7">
       <Dragger>

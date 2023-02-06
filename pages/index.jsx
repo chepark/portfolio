@@ -10,6 +10,7 @@ import { getAllPosts } from "../lib/posts";
 import SectionIntro from "../components/home/SectionIntro";
 import SectionSkills from "../components/home/SectionSkills";
 import SectionProjectList from "../components/home/SectionProjectList";
+import ProjectList from "../components/projects/ProjectList";
 
 export default function Home({ postsMeta }) {
   return (
@@ -30,7 +31,8 @@ export default function Home({ postsMeta }) {
 
         <div className="mt-32" id="projects">
           <SectionTitle section="projects" linkText="All projects" />
-          <SectionProjectList />
+          {/* <SectionProjectList /> */}
+          <ProjectList />
         </div>
 
         <div className="mt-32">

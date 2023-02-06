@@ -8,7 +8,7 @@ const ProjectItem = ({ project }) => {
     project.imageRatio == "landscape" ? "w-80 h-56" : "w-56 h-80";
 
   const [isMouseOver, setIsMouseOver] = useState(false);
-
+  console.log("project", project);
   return (
     <div className="flex flex-col">
       <button
