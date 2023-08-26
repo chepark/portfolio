@@ -20,18 +20,19 @@ const ProjectItem = ({ project }) => {
           setIsMouseOver(false);
         }}
       >
-        <Link href={project.url} passHref>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Personal Project"
-          >
-            <Image
-              src={`/${project.id}.png`}
-              layout="fill"
-              alt={project.title}
-            />
-          </a>
+        <Link
+          href={project.url}
+          passHref
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Personal Project">
+
+          <Image
+            src={`/${project.id}.png`}
+            layout="fill"
+            alt={project.title}
+          />
+
         </Link>
         <ProjectItemMeta
           project={project}

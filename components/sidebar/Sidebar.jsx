@@ -34,45 +34,45 @@ const Sidebar = () => {
               className={`${styles.navAnimation}`}
               style={{ animationDelay: "1000ms" }}
             >
-              <Link href="/">
-                <a
-                  className={`hover:font-semibold ${
-                    currentPath.home ? "font-semibold" : ""
-                  } `}
-                  aria-label="Home"
-                >
+              <Link
+                href="/"
+                className={`hover:font-semibold ${
+                  currentPath.home ? "font-semibold" : ""
+                } `}
+                aria-label="Home">
+                
                   HOME
-                </a>
+                
               </Link>
             </li>
             <li
               className={styles.navAnimation}
               style={{ animationDelay: "1100ms" }}
             >
-              <Link href="/#projects">
-                <a
-                  className={`hover:font-semibold ${
-                    currentPath.projects ? "font-semibold" : ""
-                  }`}
-                  aria-label="Projects"
-                >
+              <Link
+                href="/#projects"
+                className={`hover:font-semibold ${
+                  currentPath.projects ? "font-semibold" : ""
+                }`}
+                aria-label="Projects">
+                
                   PROJECTS
-                </a>
+                
               </Link>
             </li>
             <li
               className={styles.navAnimation}
               style={{ animationDelay: "1200ms" }}
             >
-              <Link href="/blog">
-                <a
-                  className={`hover:font-semibold ${
-                    currentPath.blog ? "font-semibold" : ""
-                  }`}
-                  aria-label="Blog"
-                >
+              <Link
+                href="/blog"
+                className={`hover:font-semibold ${
+                  currentPath.blog ? "font-semibold" : ""
+                }`}
+                aria-label="Blog">
+                
                   BLOG
-                </a>
+                
               </Link>
             </li>
             <li

@@ -5,7 +5,7 @@ import { CV_URL } from "../../lib/socials";
 const MobileNav = () => {
   return (
     <div className="flex flex-row justify-center visible gap-5 pt-10 md:hidden">
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
           style={{ animationDelay: "1000ms" }}
@@ -13,7 +13,7 @@ const MobileNav = () => {
           HOME
         </div>
       </Link>
-      <Link href="/#projects">
+      <Link href="/#projects" legacyBehavior>
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
           style={{ animationDelay: "1100ms" }}
@@ -21,7 +21,7 @@ const MobileNav = () => {
           PROJECTS
         </div>
       </Link>
-      <Link href="/blog">
+      <Link href="/blog" legacyBehavior>
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
           style={{ animationDelay: "1200ms" }}

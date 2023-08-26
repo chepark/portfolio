@@ -8,7 +8,7 @@ const SectionPostList = ({ postsMeta }) => {
       <ul className="">
         {postsMeta.map((meta) => {
           return (
-            <Link key={meta.id} href={`/blog/${meta.slug}`}>
+            <Link key={meta.id} href={`/blog/${meta.slug}`} legacyBehavior>
               <li>
                 <div className="flex flex-col justify-between py-3 border-b md:items-center sm:items-end list-grow sm:flex-row">
                   <div className="text-lg font-semibold ">{meta.title}</div>

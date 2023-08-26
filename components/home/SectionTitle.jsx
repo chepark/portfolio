@@ -14,7 +14,7 @@ const SectionTitle = ({ section, linkText }) => {
       <h2 className="text-xl font-righteous">{title}</h2>
       {section == "blog" && (
         <div className="flex flex-row items-center gap-2">
-          <Link href={"/" + section}>{linkText}</Link>
+          <Link href={"/" + section} legacyBehavior>{linkText}</Link>
           <RightArrowIcon />
         </div>
       )}
