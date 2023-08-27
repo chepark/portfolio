@@ -1,10 +1,13 @@
-import * as React from "react";
+import {FC, ReactNode} from "react";
 import {
   LinkedInIcon,
   GithubIcon,
   EmailIcon,
   DevToIcon,
 } from "../components/icons";
+import Link from "next/link";
+
+
 
 export const CV_URL =
   "https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:9a732bb9-930e-32ff-8f6b-923eecb811e1";

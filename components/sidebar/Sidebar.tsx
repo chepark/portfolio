@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
 import SocialLink from "./SocialLink";
-import { socialData, CV_URL } from "../../lib/socials";
+import { socialData, CV_URL } from "../../lib/Socials";
 import styles from "../../styles/Sidebar.module.css";
 
 const Sidebar = () => {

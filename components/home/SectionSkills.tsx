@@ -1,5 +1,5 @@
 import SkillItem from "./SkillItem";
-import { skillData } from "../../lib/skills";
+import { skillData } from "../../lib/Skills";
 
 const SectionSkills = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import SectionIntro from "../../components/home/SectionIntro.jsx";
-import { CV_URL } from "../../lib/socials";
+import { CV_URL } from "../../lib/Socials.jsx";
 
 describe("SectionIntroComponent", () => {
   it("Should open the CV link when CV button is clicked", () => {

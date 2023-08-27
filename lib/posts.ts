@@ -1,6 +1,5 @@
 import path from "path";
 import fs from "fs";
-import { sync } from "glob";
 import matter from "gray-matter";
 import formatDate from "../lib/formatDate";
 

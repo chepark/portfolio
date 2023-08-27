@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "../../styles/Sidebar.module.css";
-import { CV_URL } from "../../lib/socials";
+import { CV_URL } from "../../lib/Socials";
 
 const MobileNav = () => {
   return (
