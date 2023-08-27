@@ -99,7 +99,7 @@ const Sidebar = () => {
               <SocialLink
                 key={social.id}
                 url={social.url}
-                aria-label={social.areaLabel}
+                areaLabel={social.areaLabel}
                 icon={social.iconComponent}
                 animationDelay={social.animationDelay}
               />
