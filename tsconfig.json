@@ -21,7 +21,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "__tests__/components/sectionIntro.spec.js"  ],
+, "__tests__/components/sectionIntro.spec.js", "__mocks__/skills.js", "__mocks__/fileMock.js", "__tests__/components/sectionSkills.spec.js", "__tests__/components/sectionProjectList.spec.js"  ],
   "exclude": [
     "node_modules"
   ]

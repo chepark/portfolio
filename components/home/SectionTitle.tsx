@@ -2,7 +2,12 @@ import * as React from "react";
 import Link from "next/link";
 import RightArrowIcon from "../icons/RightArrowIcon";
 
-const SectionTitle = ({ section, linkText }) => {
+type SectionTitleProps = {
+  section: string;
+  linkText?: string;
+}
+
+const SectionTitle = ({ section, linkText }: SectionTitleProps) => {
   const firstChar = section.charAt(0);
   const firstCharToUpperCase = firstChar.toUpperCase();
   const title = section.replace(firstChar, firstCharToUpperCase);
