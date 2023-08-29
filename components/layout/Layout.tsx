@@ -10,12 +10,14 @@ const Layout = (props) => {
   };
 
   return (
-    <>
+    <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <Head>
         <title>{meta.title}</title>
         <meta content={meta.description} name="description" />
         <meta name="robots" content="follow, index" />
+        
       </Head>
+      <body>
       <div className="relative flex flex-col min-h-screen px-8 overflow-x-hidden overflow-y-scroll md:px-0 ">
         <Sidebar />
 
@@ -26,7 +28,8 @@ const Layout = (props) => {
           <Footer />
         </>
       </div>
-    </>
+      </body>
+    </html>
   );
 };
 
