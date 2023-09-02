@@ -1,25 +1,15 @@
-import { Metadata } from 'next';
 import Head from 'next/head';
 import Sidebar from '../components/sidebar/Sidebar';
 import Footer from '../components/footer/Footer';
 import { ibm_plex_sans, righteous } from './fonts';
 
-export const metadata: Metadata = {
-  title: 'Chaeah Park',
-  description: 'Software developer and engineering student',
-};
+import './globals.css';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const meta = {
-    title: 'Chaeah Park - Front-end developer and engineering student',
-    description: `Front-end developer, engineering student`,
-    type: 'website',
-  };
-
   return (
     <html
       lang='en'
@@ -27,8 +17,6 @@ export default function RootLayout({
       className={`${ibm_plex_sans.variable} ${righteous.variable}`}
     >
       <Head>
-        <title>{meta.title}</title>
-        <meta content={meta.description} name='description' />
         <meta name='robots' content='follow, index' />
       </Head>
       <body>

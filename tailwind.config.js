@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   //ADD PURGE BELOW
-  content: ['./pages/**/*.{ts,tsx,mdx}', './components/**/*.{ts,tsx,mdx}'],
+  content: [
+    './app/**/*.{ts,tsx,mdx}',
+    './pages/**/*.{ts,tsx,mdx}',
+    './components/**/*.{ts,tsx,mdx}',
+  ],
   theme: {
     screens: {
       sm: '480px',

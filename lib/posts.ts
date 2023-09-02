@@ -1,14 +1,14 @@
-import path from "path";
-import fs from "fs";
-import matter from "gray-matter";
-import formatDate from "../lib/formatDate";
+import path from 'path';
+import fs from 'fs';
+import matter from 'gray-matter';
+import formatDate from '../lib/formatDate';
 
-const postsDirPath = path.join(process.cwd(), "posts");
+const postsDirPath = path.join(process.cwd(), 'posts');
 
 export const getSlugs = () => {
   const fileNames = fs.readdirSync(postsDirPath);
   const slugs = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.mdx$/, "");
+    const slug = fileName.replace(/\.mdx$/, '');
     return slug;
   });
 
@@ -16,7 +16,7 @@ export const getSlugs = () => {
 };
 
 export const getPostBySlug = (slug) => {
-  const postPath = path.join(postsDirPath, slug + ".mdx");
+  const postPath = path.join(postsDirPath, slug + '.mdx');
   const source = fs.readFileSync(postPath);
   const { content, data } = matter(source);
 
