@@ -1,32 +1,39 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
+import { useState } from 'react';
 import Link from 'next/link';
-import MobileNav from './MobileNav';
-import SocialLink from './SocialLink';
+import TopNavigation from './TopNavigation';
 import { socialData, CV_URL } from '../../lib/Socials';
-import styles from '../../styles/Sidebar.module.css';
-import { usePathname } from 'next/navigation';
+import styles from '../../styles/Navigation.module.css';
 
-const Sidebar = () => {
-  const pathName = usePathname();
-  const [currentPath, setCurrentPath] = useState({
-    home: true,
-    projects: false,
-    blog: false,
-  });
+type Menu = 'HOME' | 'PROJECTS' | 'BLOG';
 
-  useEffect(() => {
-    if (pathName === '/')
-      setCurrentPath({ home: true, projects: false, blog: false });
+const SocialLink = ({ url, icon, animationDelay, areaLabel }) => {
+  return (
+    <div className={styles.socialAnimation} style={{ animationDelay }}>
+      <a
+        href={url}
+        target='_blank'
+        rel='noopener noreferrer'
+        className='hover:opacity-50'
+        aria-label={areaLabel}
+      >
+        {icon}
+      </a>
+    </div>
+  );
+};
 
-    if (pathName === '/#projects')
-      setCurrentPath({ home: false, projects: true, blog: false });
+const SideNavigation = () => {
+  const [currentPath, setCurrentPath] = useState('HOME');
 
-    if (pathName === '/blog')
-      setCurrentPath({ home: false, projects: false, blog: true });
-  }, [pathName]);
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>): void => {
+    const { target } = e;
+    if (target) {
+      const menu = (target as HTMLAnchorElement).textContent;
+      setCurrentPath(menu as Menu);
+    }
+  };
 
   return (
     <div className='relative'>
@@ -40,9 +47,10 @@ const Sidebar = () => {
               <Link
                 href='/'
                 className={`hover:font-semibold ${
-                  currentPath.home ? 'font-semibold' : ''
+                  currentPath === 'HOME' ? 'font-semibold' : ''
                 } `}
                 aria-label='Home'
+                onClick={handleLinkClick}
               >
                 HOME
               </Link>
@@ -54,9 +62,10 @@ const Sidebar = () => {
               <Link
                 href='/#projects'
                 className={`hover:font-semibold ${
-                  currentPath.projects ? 'font-semibold' : ''
+                  currentPath === 'PROJECTS' ? 'font-semibold' : ''
                 }`}
                 aria-label='Projects'
+                onClick={handleLinkClick}
               >
                 PROJECTS
               </Link>
@@ -68,9 +77,10 @@ const Sidebar = () => {
               <Link
                 href='/blog'
                 className={`hover:font-semibold ${
-                  currentPath.blog ? 'font-semibold' : ''
+                  currentPath === 'BLOG' ? 'font-semibold' : ''
                 }`}
                 aria-label='Blog'
+                onClick={handleLinkClick}
               >
                 BLOG
               </Link>
@@ -129,9 +139,9 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <MobileNav />
+      <TopNavigation />
     </div>
   );
 };
 
-export default Sidebar;
+export default SideNavigation;

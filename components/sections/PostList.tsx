@@ -2,7 +2,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import formatDate from '../../lib/formatDate';
 
-const SectionPostList = ({ postsMeta }) => {
+const PostList = ({ postsMeta }) => {
   return (
     <div className='mt-4 mb-8'>
       <ul className=''>
@@ -23,4 +23,4 @@ const SectionPostList = ({ postsMeta }) => {
   );
 };
 
-export default SectionPostList;
+export default PostList;

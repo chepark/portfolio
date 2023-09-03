@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Sidebar from '../components/sidebar/Sidebar';
-import Footer from '../components/footer/Footer';
+import SideNavigation from '../components/sections/SideNavigation';
+import Footer from '../components/sections/Footer';
 import { ibm_plex_sans, righteous } from './fonts';
 
 import './globals.css';
@@ -22,7 +22,7 @@ export default function RootLayout({
       </Head>
       <body>
         <div className='relative flex flex-col min-h-screen px-8 overflow-x-hidden overflow-y-scroll md:px-0 '>
-          <Sidebar />
+          <SideNavigation />
           <>
             <main className='container relative pt-8 mx-auto sm:pt-16 md:max-w-2xl animate-main-load'>
               {children}

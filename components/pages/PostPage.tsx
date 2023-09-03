@@ -1,12 +1,25 @@
 'use client';
-import Head from 'next/head';
-import { useRouter } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote';
 
-import 'highlight.js/styles/atom-one-dark.css';
-import BackArrowIcon from '../../../components/icons/BackArrowIcon';
-import AuthorDate from '../../../components/blog/AuthorDate';
-import formatDate from '../../../lib/formatDate';
+import { useRouter } from 'next/navigation';
+import { BackArrowIcon } from '../icons';
+import formatDate from '../../lib/formatDate';
+import { MDXRemote } from 'next-mdx-remote';
+import Image from 'next/legacy/image';
+import profilePic from '../../public/me.png';
+
+const AuthorDate = ({ date }) => {
+  return (
+    <div className='flex items-center justify-between mt-5 mb-12'>
+      <div className='flex items-center gap-5'>
+        <div className='w-16 h-16 overflow-hidden rounded-full'>
+          <Image src={profilePic} alt='Author of the article' sizes='20vw' />
+        </div>
+        <div>Cheah Park</div>
+      </div>
+      <div>{date}</div>
+    </div>
+  );
+};
 
 export default function PostPage({ post }) {
   const router = useRouter();

@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
-
+import BlogPage from '../../components/pages/BlogPage';
 import { getAllPosts } from '../../lib/posts';
-import BlogPage from './blog-page';
 
 export const metadata: Metadata = {
   title: 'Blog — Chaeah Park',
@@ -11,9 +10,5 @@ export const metadata: Metadata = {
 export default async function Page() {
   const posts = await getAllPosts();
 
-  return (
-    <>
-      <BlogPage posts={posts} />
-    </>
-  );
+  return <BlogPage posts={posts} />;
 }
