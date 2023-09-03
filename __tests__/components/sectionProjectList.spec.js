@@ -1,14 +1,14 @@
-import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
-import SectionProjectList from "../../components/home/SectionProjectList";
-import Dragger from "react-physics-dragger";
+import React from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
+import ProjectList from '../../components/sections/ProjectList';
+import Dragger from 'react-physics-dragger';
 
-jest.mock("react-physics-dragger");
+jest.mock('react-physics-dragger');
 
-describe("SectionProjectList", () => {
-  it("Should render project link buttons", () => {
-    render(<SectionProjectList />);
-    const projectButtons = screen.findAllByRole("button");
+describe('SectionProjectList', () => {
+  it('Should render project link buttons', () => {
+    render(<ProjectList />);
+    const projectButtons = screen.findAllByRole('button');
 
     waitFor(() => {
       expect(projectButtons).toBeInTheDocument();
