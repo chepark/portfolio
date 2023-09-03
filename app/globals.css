@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-base font-ibm text-primary-black;
+  }
+
+  h1 {
+    @apply text-2xl text-primary-black;
+  }
+
+  h2 {
+    @apply text-xl text-primary-black;
+  }
+
+  h3 {
+    @apply text-lg font-semibold font-ibm text-primary-black;
+  }
+
+  h4 {
+    @apply text-base font-ibm text-primary-black;
+  }
+}
+
+@layer components {
+  .list-grow {
+    @apply cursor-pointer hover:scale-[1.01] transition duration-300 hover:ease-in-out;
+  }
+
+  .card-hover-home {
+    @apply transition duration-500 transform hover:-translate-y-6 before:ease-out before:transition before:duration-500 hover:before:absolute hover:before:-bottom-8 hover:before:left-1/2 hover:before:-translate-x-1/2 hover:drop-shadow-xl;
+  }
+}
+
+@layer utilities {
+  .clip-inset {
+    clip-path: inset(0% -100% 0% -100%);
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #363434;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  border-radius: 10px;
+}
