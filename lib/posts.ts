@@ -1,9 +1,8 @@
 import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
-import formatDate from '../lib/formatDate';
 
-const postsDirPath = path.join(process.cwd(), 'posts');
+const postsDirPath = path.join(process.cwd(), 'data/posts');
 
 export const getSlugs = () => {
   const fileNames = fs.readdirSync(postsDirPath);

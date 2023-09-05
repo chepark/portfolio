@@ -10,14 +10,18 @@
 
 ## My plans are to ...
 
-- [x] ~~Upgrade to Next.js 13 (Done: 27th Aug 2023)~~ 
+- [x] ~~Upgrade to Next.js 13 (Done: 27.08.2023)~~
 - [ ] Create database
 - [ ] Add features on blog (comments, categorize by tags)
 - [ ] Add Open Graph protocol markup
 - [ ] Connect to Google Analytics
 - [ ] Connect to CMS
 - [ ] Automate testing
-- [ ] Improve the architectur
+- [x] ~~Improve the architecture(Done:03.09-2023)~~
+- [ ] Change file extensions of data files and organize into data directory
+- [ ] Setup ESLint and Prettier again and refactor code
+- [ ] Edit license (Site: open source, Posts: Copyright)
+- [ ] Create NPM package for icons
 
 ## How to run locally
 

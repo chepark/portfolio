@@ -1,2 +1,6 @@
-The codes are free to use. 
-But please credit the author when you use the code. 
+All contents in `./data` directory is owned by Chaeah Park. 
+You cannot use the contents under this directory.  
+
+Otherwise, you can free to use the code with my credit. 
+Do not exactly copy the design.
+

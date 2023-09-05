@@ -1,0 +1,91 @@
+{
+  "projects": [
+    {
+      "id": "p0",
+      "title": "No Drone Zone",
+      "description": "Drone and pilot tracker to save endangered birds",
+      "url": "http://3.84.254.90/",
+      "github": "https://github.com/chepark/no-drone-zone",
+      "techStacks": [
+        "TypeScript",
+        "React",
+        "Node",
+        "Express",
+        "TailwindCSS",
+        "MySQL",
+        "AWS-EC2",
+        "Jest",
+        "React Testing Library"
+      ],
+      "bgColor": "#cdced0",
+      "imageRatio": "portrait"
+    },
+    {
+      "id": "p1",
+      "title": "Time Traveler",
+      "description": "Website to learn about timezone",
+      "url": "",
+      "github": "https://github.com/chepark/fullstack-time-traveler",
+      "techStacks": ["Python", "JavaScript", "CSS", "Flask", "MySQL"],
+      "bgColor": "#e77da1",
+      "imageRatio": "portrait"
+    },
+    {
+      "id": "p2",
+      "title": "Joinerry",
+      "description": "Programming group project finder",
+      "url": "",
+      "github": "https://github.com/chepark/full-stack-joinerry",
+      "techStacks": [
+        "React",
+        "JavaScript",
+        "Node",
+        "Express",
+        "Sass",
+        "MongoDB"
+      ],
+      "bgColor": "#47bd94",
+      "imageRatio": "portrait"
+    },
+    {
+      "id": "p3",
+      "title": "Korean House",
+      "description": "Korean food ordering webapp",
+      "url": "Korean food ordering website",
+      "github": "https://github.com/chepark/korean-house",
+      "techStacks": ["React", "Firebase", "MUI", "Stripe API"],
+      "bgColor": "#6b5ea9",
+      "imageRatio": "portrait"
+    },
+    {
+      "id": "p4",
+      "title": "Light-Dark Mode Calculator",
+      "description": "Light and dark mode styled calculator",
+      "url": "https://chepark.github.io/typescript-calc",
+      "github": "https://github.com/chepark/typescript-calc",
+      "techStacks": ["TypeScript"],
+      "bgColor": "#ccde58",
+      "imageRatio": "portrait"
+    },
+    {
+      "id": "p5",
+      "title": "Galleria",
+      "description": "Website to learn about famous paintings",
+      "url": "https://soft-pothos-04baa8.netlify.app",
+      "github": "https://github.com/chepark/galleria",
+      "techStacks": ["React", "Sass", "Netlify"],
+      "bgColor": "#0d111e",
+      "imageRatio": "portrait"
+    },
+    {
+      "id": "p6",
+      "title": "Splitter",
+      "description": "Web app to divide the bill among friends",
+      "url": "https://chepark.github.io/splitter/",
+      "github": "https://github.com/chepark/splitter",
+      "techStacks": ["HTML", "Sass", "JavaScript"],
+      "bgColor": "#0e484c",
+      "imageRatio": "portrait"
+    }
+  ]
+}

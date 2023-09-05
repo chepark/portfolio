@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Hero from '../../components/sections/Hero.jsx';
-import { CV_URL } from '../../lib/Socials.js';
+import { CV_URL } from '../../data/Socials.tsx';
 
 describe('HeroComponent', () => {
   it('Should open the CV link when CV button is clicked', () => {

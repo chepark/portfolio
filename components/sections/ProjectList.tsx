@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Dragger from 'react-physics-dragger';
-import projectsData from '../../lib/projects.json';
-import Image from 'next/legacy/image';
+import projectsData from '../../data/projects.json';
 import Link from 'next/link';
 import { ExternalLinkIcon, GithubLinkIcon } from '../icons';
 
@@ -84,7 +83,21 @@ const ProjectItem = ({ project }) => {
           rel='noopener noreferrer'
           aria-label='Personal Project'
         >
-          <Image src={`/${project.id}.png`} layout='fill' alt={project.title} />
+          <div
+            className='grid w-56 grid-cols-5 grid-rows-6 p-4 bg-black h-80'
+            style={{ backgroundColor: `${project.bgColor}` }}
+          >
+            <div
+              className={
+                'text-white col-span-4 row-span-2 text-left text-[25px] leading-7 font-bold break-words whitespace-normal max-w-[14rem]'
+              }
+            >
+              {project.title}
+            </div>
+            <div className='w-full col-start-1 col-end-6 row-start-6 row-end-auto text-right text-white break-words whitespace-normal max-w-[14rem]'>
+              {project.description}
+            </div>
+          </div>
         </Link>
         <ProjectItemMeta
           project={project}

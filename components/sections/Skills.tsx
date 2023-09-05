@@ -1,4 +1,4 @@
-import { skillData } from '../../lib/Skills';
+import { skillData } from '../../data/Skills';
 
 const SkillItem = ({ children, text }) => {
   return (
