@@ -1,6 +1,6 @@
-All contents in `./data` directory is owned by Chaeah Park. 
-You cannot use the contents under this directory.  
+All contents in `./data` directory are owned by Chaeah Park. 
+Usage of any contents under this directory is regarded as copyright infringement.  
 
-Otherwise, you can free to use the code with my credit. 
+Otherwise the rest of the repository you can free to use the code with my credit. 
 Do not exactly copy the design.
 
