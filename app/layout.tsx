@@ -1,9 +1,24 @@
-import Head from 'next/head';
 import SideNavigation from '../components/sections/SideNavigation';
 import Footer from '../components/sections/Footer';
 import { ibm_plex_sans, righteous } from './fonts';
-
 import './globals.css';
+
+export const metadata = {
+  metadataBase: new URL('https://chaeah.me'),
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
 
 export default function RootLayout({
   children,
@@ -16,9 +31,6 @@ export default function RootLayout({
       style={{ scrollBehavior: 'smooth' }}
       className={`${ibm_plex_sans.variable} ${righteous.variable}`}
     >
-      <Head>
-        <meta name='robots' content='follow, index' />
-      </Head>
       <body>
         <div className='relative flex flex-col min-h-screen px-8 overflow-x-hidden overflow-y-scroll md:px-0 '>
           <SideNavigation />
