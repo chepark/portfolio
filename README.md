@@ -12,7 +12,7 @@
 
 - [x] ~~Upgrade to Next.js 13 (Done: 27.08.2023)~~
 - [ ] Create database
-- [ ] Add features on blog (comments, categorize by tags)
+- [ ] Add features on blog (~~comments~~, categorize by tags)
 - [ ] Add Open Graph protocol markup
 - [ ] Connect to Google Analytics
 - [ ] Connect to CMS

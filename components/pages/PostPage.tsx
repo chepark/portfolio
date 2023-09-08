@@ -1,11 +1,12 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { BackArrowIcon } from '../icons';
-import formatDate from '../../lib/formatDate';
 import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/legacy/image';
+import { useRouter } from 'next/navigation';
+import formatDate from '../../lib/formatDate';
 import profilePic from '../../public/me.png';
+import { BackArrowIcon } from '../icons';
+import Comments from '../sections/Comments';
 
 const AuthorDate = ({ date }) => {
   return (
@@ -37,6 +38,7 @@ export default function PostPage({ post }) {
       <div className='prose prose-slate max-w-none'>
         <MDXRemote {...post.source} />
       </div>
+      <Comments />
     </>
   );
 }
