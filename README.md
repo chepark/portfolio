@@ -18,10 +18,10 @@
 - [ ] Connect to CMS
 - [ ] Automate testing
 - [x] ~~Improve the architecture(Done:03.09-2023)~~
-- [ ] Change file extensions of data files and organize into data directory
+- [x] ~~Change file extensions of data files and organize into data directory(Done:08.09.2023)~~
 - [ ] Setup ESLint and Prettier again and refactor code
-- [ ] Edit license (Site: open source, Posts: Copyright)
-- [ ] Create NPM package for icons
+- [x] Edit license (Site: open source, Posts: Copyright)
+- [-] Create NPM package for icons
 
 ## How to run locally
 
