@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import TopNavigation from './TopNavigation';
-import { socialData, CV_URL } from '../../data/Socials';
+import { socialData, CV_URL } from '../../data/socials';
 import styles from '../../styles/Navigation.module.css';
 
 type Menu = 'HOME' | 'PROJECTS' | 'BLOG';
