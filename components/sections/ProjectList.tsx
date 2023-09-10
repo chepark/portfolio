@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Dragger from 'react-physics-dragger';
 import projectsData from '../../data/projects.json';
-import Link from 'next/link';
 import { ExternalLinkIcon, GithubLinkIcon } from '../icons';
 
 const ProjectItemMeta = ({ project, mouseOver, dimension }) => {

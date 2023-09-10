@@ -1,9 +1,10 @@
+import { Metadata } from 'next';
 import SideNavigation from '../components/sections/SideNavigation';
 import Footer from '../components/sections/Footer';
 import { ibm_plex_sans, righteous } from './fonts';
 import './globals.css';
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://chaeah.me'),
   robots: {
     index: false,

@@ -5,7 +5,7 @@ import { CV_URL } from '../../data/Socials';
 const TopNavigation = () => {
   return (
     <div className='flex flex-row justify-center visible gap-5 pt-10 md:hidden'>
-      <Link href='/' legacyBehavior>
+      <Link href='/'>
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
           style={{ animationDelay: '1000ms' }}
@@ -21,7 +21,7 @@ const TopNavigation = () => {
           PROJECTS
         </div>
       </Link>
-      <Link href='/blog' legacyBehavior>
+      <Link href='/blog'>
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
           style={{ animationDelay: '1200ms' }}

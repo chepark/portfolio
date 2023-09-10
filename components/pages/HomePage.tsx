@@ -2,12 +2,14 @@
 
 import Hero from '../sections/Hero';
 import PostList from '../sections/PostList';
-import Skills from '../sections/Skills';
+import SkillList from '../sections/SkillList';
 import Title from '../sections/Title';
 import PageHeader from '../sections/PageHeader';
 import ProjectList from '../sections/ProjectList';
+import sectionData from '../../data/sections.json';
 
 export default function HomePage({ postsMeta }) {
+  const { sections } = sectionData;
   return (
     <>
       <div>
@@ -19,20 +21,14 @@ export default function HomePage({ postsMeta }) {
           <Hero />
         </div>
 
-        <div className='mt-32'>
-          <Title section='skills' />
-          <Skills />
-        </div>
-
-        <div className='mt-32' id='projects'>
-          <Title section='projects' linkText='All projects' />
-          <ProjectList />
-        </div>
-
-        <div className='mt-32'>
-          <Title section='blog' linkText='All posts' />
-          <PostList postsMeta={postsMeta} />
-        </div>
+        {sections.map((section) => (
+          <div className='mt-32' key={section.id}>
+            <Title section={section.title} linkLabel={section.linkLabel} />
+            {section.title === 'skills' && <SkillList />}
+            {section.title === 'projects' && <ProjectList />}
+            {section.title === 'blog' && <PostList postsMeta={postsMeta} />}
+          </div>
+        ))}
       </div>
     </>
   );

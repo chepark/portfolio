@@ -7,11 +7,9 @@ export const metadata: Metadata = {
   description: 'Software developer and engineering student',
 };
 
-export default async function Page() {
-  const posts = await getAllPosts().slice(0, 5);
+export default function Page() {
+  const posts = getAllPosts().slice(0, 5);
   const postsMeta = posts.map((post) => post.meta);
 
   return <HomePage postsMeta={postsMeta} />;
 }
-
-// TODO: add robots and sitemap

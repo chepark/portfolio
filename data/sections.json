@@ -1,0 +1,17 @@
+{
+  "sections": [
+    {
+      "id": "section-skills",
+      "title": "skills"
+    },
+    {
+      "id": "section-projects",
+      "title": "projects"
+    },
+    {
+      "id": "section-blog",
+      "title": "blog",
+      "linkLabel": "All posts"
+    }
+  ]
+}
