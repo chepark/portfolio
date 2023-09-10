@@ -10,7 +10,11 @@ type Menu = 'HOME' | 'PROJECTS' | 'BLOG';
 
 const SocialLink = ({ url, icon, animationDelay, areaLabel }) => {
   return (
-    <div className={styles.socialAnimation} style={{ animationDelay }}>
+    <div
+      className={styles.socialAnimation}
+      style={{ animationDelay }}
+      role='social-link'
+    >
       <a
         href={url}
         target='_blank'
