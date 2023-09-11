@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Title from './Title';
+import Title from '../../components/sections/Title';
 
 describe('Title Component', () => {
   it('should render skills', () => {

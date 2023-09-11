@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import TopNavigation from './TopNavigation';
+import TopNavigation from '../../components/sections/TopNavigation';
 
 describe('TopNavigation Component', () => {
   it('should render navigation links', () => {

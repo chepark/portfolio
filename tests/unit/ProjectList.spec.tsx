@@ -6,7 +6,7 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
 }));
 
 import { render, screen } from '@testing-library/react';
-import ProjectList from './ProjectList';
+import ProjectList from '../../components/sections/ProjectList';
 import projectData from '../../data/projects.json';
 
 describe('ProjectList Component', () => {

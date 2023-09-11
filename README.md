@@ -5,6 +5,8 @@
 </p>
 
 - Framework: Next.js
+- Unit testing: Jest and React Testing Library
+- E2E testing: Playwright
 - Deployment: Vercel
 - Styles: Tailwind CSS
 

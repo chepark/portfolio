@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import SideNavigation from './SideNavigation';
-import { socialData } from '../../data/Socials';
+import SideNavigation from '../components/sections/SideNavigation';
+import { socialData } from '../data/Socials';
 
 const navigationTexts = ['Home', 'Projects', 'Blog', 'Github', 'CV'];
 

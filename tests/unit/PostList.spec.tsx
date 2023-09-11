@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import PostList from './PostList';
+import PostList from '../../components/sections/PostList';
 import { getAllPosts } from '../../lib/posts';
 
 // Mock the formatDate function

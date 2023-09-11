@@ -19,17 +19,6 @@
     ],
     "strictNullChecks": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "__tests__/sections/sectionIntro.spec.js",
-    "__mocks__/skills.js",
-    "__mocks__/fileMock.js",
-    "__tests__/sections/sectionSkills.spec.js",
-    "__tests__/sections/sectionProjectList.spec.js",
-    ".next/types/**/*.ts",
-    "__tests__/pages/home.spec.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
