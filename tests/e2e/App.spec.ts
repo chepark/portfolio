@@ -22,3 +22,23 @@ test('should load the Blog page ', async ({ page }) => {
   await page.click('text=BLOG');
   await expect(page).toHaveURL('/blog');
 });
+
+test('should load a Post page ', async ({ page }) => {
+  await page.goto('/blog');
+
+  // TODO: fix the lint error
+  await expect(page).toMatchElement('h1', { text: 'Blog' });
+  await expect(page).toMatchElement('div', {
+    text: 'My thoughts and learning into writings, colors, and diagrams.',
+  });
+
+  // Check if there are PostListItem components.
+  const postListItems = await page.$$('div.cursor-pointer');
+  expect(postListItems.length).toBeGreaterThan(0);
+
+  // Click on the first PostListItem link.
+  await postListItems[0].click();
+
+  // Check if the new page is loaded, or you can validate the content of the individual post page.
+  await page.waitForNavigation();
+});
