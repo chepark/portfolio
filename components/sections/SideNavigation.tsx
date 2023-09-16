@@ -92,15 +92,14 @@ const SideNavigation = () => {
               className={styles.navAnimation}
               style={{ animationDelay: '1300ms' }}
             >
-              <a
-                href={CV_URL}
-                target='_blank'
-                rel='noopener noreferrer'
+              <Link
+                href={'/cv'}
                 aria-label='CV'
                 className={`hover:font-semibold `}
+                onClick={handleLinkClick}
               >
                 CV
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

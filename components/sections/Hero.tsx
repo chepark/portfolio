@@ -3,6 +3,7 @@ import Image from 'next/legacy/image';
 import profilePic from '../../public/me.png';
 import styles from '../../styles/SectionIntro.module.css';
 import { CV_URL } from '../../data/Socials';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -29,14 +30,9 @@ const Hero = () => {
         <button
           className={`px-3 py-1.5 mt-5 md:mt-0 text-primary-black rounded-md ${styles.btnCV}`}
         >
-          <a
-            href={CV_URL}
-            aria-label='CV'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <Link href={'/cv'} aria-label='CV'>
             Check My CV
-          </a>
+          </Link>
         </button>
       </div>
     </>

@@ -42,19 +42,14 @@ const TopNavigation = () => {
           GITHUB
         </div>
       </a>
-      <a
-        href={CV_URL}
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label='CV'
-      >
+      <Link href={'/cv'} aria-label='CV'>
         <div
           className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
           style={{ animationDelay: '1400ms' }}
         >
           CV
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
