@@ -112,7 +112,7 @@ const ProjectItem = ({ project }) => {
 const ProjectList = () => {
   const { projects } = projectsData;
   return (
-    <div className='clip-inset mt-7'>
+    <div id='projects' className='clip-inset mt-7'>
       <Dragger>
         <div className='flex items-end gap-5 pt-10 pb-10'>
           {projects.map((project) => (

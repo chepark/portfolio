@@ -63,16 +63,15 @@ const SideNavigation = () => {
               className={styles.navAnimation}
               style={{ animationDelay: '1100ms' }}
             >
-              <Link
+              <a
                 href='/#projects'
                 className={`hover:font-semibold ${
                   currentPath === 'PROJECTS' ? 'font-semibold' : ''
                 }`}
                 aria-label='Projects'
-                onClick={handleLinkClick}
               >
                 PROJECTS
-              </Link>
+              </a>
             </li>
             <li
               className={styles.navAnimation}
