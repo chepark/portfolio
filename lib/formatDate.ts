@@ -1,17 +1,17 @@
 const formatDate = (postDate) => {
   const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "Sepember",
-    "October",
-    "November",
-    "December",
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
   ];
   const d = new Date(postDate);
 
@@ -19,7 +19,7 @@ const formatDate = (postDate) => {
   const monthIndex = d.getMonth();
   const year = d.getFullYear();
 
-  const dateFormated = `${months[monthIndex]} ${date}, ${year}`;
+  const dateFormated = `${date} ${months[monthIndex]} ${year}`;
   return dateFormated;
 };
 

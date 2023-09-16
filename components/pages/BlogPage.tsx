@@ -23,16 +23,14 @@ const PostListItem = ({ meta }) => {
 export default function BlogPage({ posts }) {
   return (
     <div>
-      <div>
-        <PageHeader
-          title='Blog'
-          subTitle='My thoughts and learning into writings, colors, and diagrams.'
-        />
-        <div className='mt-16 md:mt-28'>
-          {posts.map((post) => {
-            return <PostListItem key={post.meta.id} meta={post.meta} />;
-          })}
-        </div>
+      <PageHeader
+        title='Blog'
+        subTitle='My thoughts and learning into writings, colors, and diagrams.'
+      />
+      <div className='mt-16 md:mt-28'>
+        {posts.map((post) => {
+          return <PostListItem key={post.meta.id} meta={post.meta} />;
+        })}
       </div>
     </div>
   );
