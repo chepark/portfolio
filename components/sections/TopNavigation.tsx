@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styles from '../../styles/Navigation.module.css';
-import { CV_URL } from '../../data/Socials';
 
 const TopNavigation = () => {
   return (

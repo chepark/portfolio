@@ -2,7 +2,6 @@ import * as React from 'react';
 import Image from 'next/legacy/image';
 import profilePic from '../../public/me.png';
 import styles from '../../styles/SectionIntro.module.css';
-import { CV_URL } from '../../data/Socials';
 import Link from 'next/link';
 
 const Hero = () => {
