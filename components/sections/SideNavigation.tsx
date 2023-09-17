@@ -40,7 +40,7 @@ const SideNavigation = () => {
   };
 
   return (
-    <div className='relative'>
+    <>
       <div className='md:z-[100] flex-col justify-between hidden h-screen px-10 pt-10 md:flex bg-white fixed top-0'>
         <nav>
           <ul className='flex flex-col gap-12'>
@@ -142,7 +142,7 @@ const SideNavigation = () => {
         </div>
       </div>
       <TopNavigation />
-    </div>
+    </>
   );
 };
 

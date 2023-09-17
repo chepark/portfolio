@@ -36,7 +36,7 @@ export default function RootLayout({
         <div className='relative flex flex-col min-h-screen px-8 overflow-x-hidden overflow-y-scroll md:px-0 '>
           <SideNavigation />
           <>
-            <main className='container relative pt-8 mx-auto sm:pt-16 md:max-w-3xl animate-main-load'>
+            <main className='container relative pt-8 mx-auto sm:pt-16 md:max-w-2xl animate-main-load'>
               {children}
             </main>
             <Footer />
