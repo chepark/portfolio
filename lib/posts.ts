@@ -2,6 +2,21 @@ import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
 
+export type PostContent = string;
+export interface PostMeta {
+  slug: string;
+  id: number;
+  excerpt: string;
+  title: string;
+  tags: string[];
+  date: string;
+}
+
+export interface Post {
+  content: PostContent;
+  meta: PostMeta;
+}
+
 const postsDirPath = path.join(process.cwd(), 'data/posts');
 
 export const getSlugs = () => {
@@ -17,24 +32,29 @@ export const getSlugs = () => {
 export const getPostBySlug = (slug) => {
   const postPath = path.join(postsDirPath, slug + '.mdx');
   const source = fs.readFileSync(postPath);
-  const { content, data } = matter(source);
+  const {
+    content,
+    data: { id, excerpt, title, tags, date },
+  } = matter(source);
 
-  return {
+  const post: Post = {
     content,
     meta: {
       slug,
-      id: data.id,
-      excerpt: data.excerpt,
-      title: data.title,
-      tags: data.tags.sort(),
-      date: data.date.toString(),
+      id,
+      excerpt,
+      title,
+      tags: tags.sort(),
+      date: date.toString(),
     },
   };
+
+  return post;
 };
 
 export const getAllPosts = () => {
   const slugs = getSlugs();
-  const posts = slugs
+  const posts: Post[] = slugs
     .map((slug) => getPostBySlug(slug))
     .sort((a, b) => {
       const dateA = new Date(a.meta.date);
@@ -44,5 +64,6 @@ export const getAllPosts = () => {
       return 0;
     })
     .reverse();
+
   return posts;
 };

@@ -7,8 +7,13 @@ import Title from '../sections/Title';
 import PageHeader from '../sections/PageHeader';
 import ProjectList from '../sections/ProjectList';
 import sectionData from '../../data/sections.json';
+import { PostMeta } from '../../lib/posts';
 
-export default function HomePage({ postsMeta }) {
+type HomePageProps = {
+  postsMeta: PostMeta[];
+};
+
+export default function HomePage({ postsMeta }: HomePageProps) {
   const { sections } = sectionData;
   return (
     <>
@@ -20,7 +25,6 @@ export default function HomePage({ postsMeta }) {
         <div>
           <Hero />
         </div>
-
         {sections.map((section) => (
           <div className='mt-32' key={section.id}>
             <Title section={section.title} linkLabel={section.linkLabel} />

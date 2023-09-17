@@ -1,13 +1,18 @@
 import Link from 'next/link';
 import formatDate from '../../lib/formatDate';
 import PageHeader from '../sections/PageHeader';
+import { Post, PostMeta } from '../../lib/posts';
 
-const PostListItem = ({ meta }) => {
+type BlogPageProps = {
+  posts: Post[];
+};
+
+const PostListItem = ({ meta }: { meta: PostMeta }) => {
   const { title, date, slug, excerpt } = meta;
 
   return (
     <>
-      <Link href={`/blog/${slug}`} legacyBehavior>
+      <Link href={`/blog/${slug}`}>
         <div className='my-10 cursor-pointer hover:scale-[1.01] hover:duration-300 hover:ease-in-out'>
           <div className='flex flex-col justify-between md:flex-row'>
             <h3>{title}</h3>
@@ -20,7 +25,7 @@ const PostListItem = ({ meta }) => {
   );
 };
 
-export default function BlogPage({ posts }) {
+export default function BlogPage({ posts }: BlogPageProps) {
   return (
     <div>
       <PageHeader
