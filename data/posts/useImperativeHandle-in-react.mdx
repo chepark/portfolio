@@ -1,0 +1,243 @@
+---
+id: 7
+title: Demystifying useImperativeHandle in React
+tags:
+  - react
+  - react-hook
+  - useImperative
+date: 2023-09-29
+excerpt:
+  useImperativeHandle is not a very popular hook in React. But it is very useful
+  when you want to expose some imperative methods to the parent component.
+---
+
+Today, we're going to explore one of its lesser-known hooks in React:
+`useImperativeHandle`. By the end of this blog post, you'll not only understand
+what this hook does but also why it's crucial and how you can wield its power in
+your web apps. So, let's get started!
+
+## Prerequisites
+
+Before we embark on our journey, let's make sure we're on the same page. To
+grasp the concept of useImperativeHandle, you should have a good understanding
+of the following:
+
+- **React Basics**: Familiarity with React components, state, props, and hooks
+  is essential. If you're not comfortable with these concepts yet, consider
+  checking out React's official documentation or some beginner-friendly
+  tutorials.
+
+- **useRef**: A basic understanding of the useRef hook will come in handy, as
+  useImperativeHandle often works in conjunction with it.
+
+- **forwardRef**: forwardRef is a React API that allows you to pass a ref to a
+  child component. It is used in conjunction with `ref` and
+  `useImperativeHandle`.
+
+## What is `useImperativeHandle`?
+
+In React, components can communicate with each other through props, context, and
+other mechanisms. However, there are situations where you might want to expose a
+component's internal methods or state to its parent component or external
+world.This is where `useImperativeHandle shines.
+
+It might be a bit confusing at first, but don't worry. I dissect the name of the
+hook into two to understand the concept thoroughly: 'imperative' and 'handle'.
+Do you know what they are?
+
+### imperative vs declarative programming
+
+Imperative and declrative programming are two major programming paradigms. In
+imperative programming, the focus is on describing the sequence of steps or
+commands that the computer must perform to achieve a particular result.
+
+In contrast, declarative programming emphasizes describing what you want to
+achieve without specifying the exact step-by-step process. It focuses on the
+"what" rather than the "how." React itself is often considered a declarative
+library, especially when you work with JSX and declaratively define the UI based
+on state.
+
+The term "imperative" in `useImperativeHandle` implies that this hook allows you
+to introduce a level of imperative-style programming within a declarative React
+component. It allows you to handle certain aspects of a component's behavior in
+a more imperative, step-by-step manner while still being part of the overall
+declarative React ecosystem.
+
+### handle
+
+The 'handle' is an object that encapsulates certain functionality or
+information. It's exposed via a ref, and useImperativeHandle allows you to
+fine-tune what exactly is made accessible through that ref. This mechanism is
+particularly useful when you want to provide controlled access to a component's
+internal functionality without exposing all of its implementation details.
+
+```jsx
+useImperativeHandle(
+  ref,
+  () => {
+    return {
+      // ... this is the handle having methods, and  data ...
+      // ... that you want to expose to the parent component ...
+    }
+  },
+  [],
+)
+```
+
+## Why is it needed?
+
+You might be wondering why we need a hook like `useImperativeHandle` when we
+already have props and context for communication. Well, here are a few scenarios
+that I personally think `useImperativeHandle` can be in handy:
+
+1. **Ref Forwarding**: Sometimes, you want to forward a ref from a child
+   component to the parent or a higher-level component, enabling parent
+   components to interact with child component methods directly.
+
+2. **Abstraction**: It helps abstract away the internal implementation details
+   of a component. This can lead to cleaner and more maintainable code since the
+   parent component doesn't need to know the inner workings of its children.
+
+## How to use `useImperativeHandle`?
+
+Import `useImperativHandle` and `forwardRef` from React. Then create a child
+component passing `ref` as a second argument to `forwardRef` function. Call
+`useImperativeHandle` to customize what you want to expose to the parent
+component.
+
+```jsx
+import { forwardRef, useImperativeHandle } from 'react';
+
+const MyChild = forwardRef(function MyChild(props, ref) {
+  useImperativeHandle(ref, () => {
+    return {
+      // ...methods, or data that you want to expose to the parent ...
+    };
+  }, []);
+```
+
+## Play around with `useImperativeHandle`.
+
+Lets make a simple game using `useImperativeHandle`. When a user clicks on
+"Answer the question" button, one of the inputs next to question will be
+randomly focused.
+[Demo](https://codesandbox.io/s/react-examples-ngqhnq?file=/src/UseImperativeHandle/Form.tsx)
+
+1.  Create FormInput component using `forwardRef` and `useImperativeHandle`.
+
+```jsx
+import { forwardRef, useImperativeHandle, useRef, Ref } from "react";
+
+export interface RefType {
+  focusName: () => void;
+  focusSchool: () => void;
+  focusHello: () => void;
+}
+
+const FormInput = forwardRef<RefType>(function FormInput(props, ref) {
+  const sectionRef = useRef<(HTMLInputElement | null)[]>([]);
+
+  useImperativeHandle(ref, () => {
+    // Expose methods to the parent component
+    // each method will focus on the input field next to question
+    return {
+      // It will focus on the input field next to "What is your name?"
+      focusName() {
+        console.log(sectionRef);
+        sectionRef?.current[0]?.focus();
+      },
+      // It will focus on the input field next to "What is your school?"
+      focusSchool() {
+        sectionRef?.current[1]?.focus();
+      },
+      // It will focus on the input field next to "Say hello!"
+      focusHello() {
+        sectionRef?.current[2]?.focus();
+      }
+    };
+  });
+
+// Create three input fields with questions
+  return (
+    <>
+      <div>
+        <label>
+          What is your name?:
+          <input ref={(el) => (sectionRef.current[0] = el)} />
+        </label>
+      </div>
+      <div>
+        <label>
+          What is your school:
+          <input ref={(el) => (sectionRef.current[1] = el)} />
+        </label>
+      </div>
+      <div>
+        <label>
+          Say hello!:
+          <input ref={(el) => (sectionRef.current[2] = el)} />
+        </label>
+      </div>
+    </>
+  );
+});
+
+export default FormInput;
+
+```
+
+2. Create a Form component (parent of FormInput component) and pass a ref to the
+   child component.
+
+```jsx
+import React, { useRef } from "react";
+import FormInput, { RefType } from "./FormInput";
+
+export default function Form() {
+  const myRef = useRef<RefType>(null);
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (myRef && myRef.current) {
+      // Get all methods names as an array: [focusName, focusSchool, focusHello]
+      const keys = Object.keys(myRef.current);
+      // Get a random number between 0 and 2
+      const randomNumber = Math.floor(Math.random() * 3);
+      // Choose a method name randomly
+      const selectedFunc = keys[randomNumber];
+      // Call the selected method
+      myRef.current[selectedFunc as keyof RefType]();
+    }
+  };
+
+  return (
+    <>
+      <form>
+        <FormInput ref={myRef} />
+        <button onClick={(e) => handleClick(e)}>Answer the question</button>
+      </form>
+    </>
+  );
+}
+
+```
+
+## Usecases
+
+I think `useImperativeHandle` can be useful especially in these two scenarioss:
+
+1. Video Player Component Imagine you're building a video player component. With
+   useImperativeHandle, you can expose methods like play, pause, and seek to
+   control the video playback externally, giving you more flexibility in how you
+   integrate and control the component in your app.
+
+2. Custom Input Field Let's say you're creating a custom input field component.
+   You can use useImperativeHandle to expose methods like focus or clear to
+   control the input's behavior programmatically.
+
+## Pitfalls
+
+According to React offical documentation, `useImperativeHandle` should not be
+overused. It is recommended to use them only when you cannot achieve your goal
+with props. Scrolling to a node, focusing a node, triggering an animation,
+selecting text are some examples of good use cases for `useImperativeHandle`.
