@@ -1,4 +1,4 @@
-# chaeah.me
+# chaeah.com
 
 <p align="center">
   <img width="460" height="auto" src="./public/demo.gif">

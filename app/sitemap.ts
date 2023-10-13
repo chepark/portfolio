@@ -1,12 +1,12 @@
-import { MetadataRoute } from 'next';
-import { getSlugs } from '../lib/posts';
+import { MetadataRoute } from 'next'
+import { getSlugs } from '../lib/posts'
 
-const BASE_URL = 'https://chaeah.me';
+const BASE_URL = 'https://chaeah.com'
 
 const postRoutes = getSlugs().map((slug) => ({
   url: `${BASE_URL}/blog/${slug}`,
   priority: 0.5,
-}));
+}))
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -23,5 +23,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...postRoutes,
-  ];
+  ]
 }

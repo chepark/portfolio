@@ -1,11 +1,11 @@
-import { Metadata } from 'next';
-import SideNavigation from '../components/sections/SideNavigation';
-import Footer from '../components/sections/Footer';
-import { ibm_plex_sans, righteous } from './fonts';
-import './globals.css';
+import { Metadata } from 'next'
+import SideNavigation from '../components/sections/SideNavigation'
+import Footer from '../components/sections/Footer'
+import { ibm_plex_sans, righteous } from './fonts'
+import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://chaeah.me'),
+  metadataBase: new URL('https://chaeah.com'),
   robots: {
     index: false,
     follow: true,
@@ -19,24 +19,24 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html
-      lang='en'
+      lang="en"
       style={{ scrollBehavior: 'smooth' }}
       className={`${ibm_plex_sans.variable} ${righteous.variable}`}
     >
       <body>
-        <div className='relative flex flex-col min-h-screen px-8 overflow-x-hidden overflow-y-scroll md:px-0 '>
+        <div className="relative flex flex-col min-h-screen px-8 overflow-x-hidden overflow-y-scroll md:px-0 ">
           <SideNavigation />
           <>
-            <main className='container relative pt-8 mx-auto sm:pt-16 md:max-w-2xl animate-main-load'>
+            <main className="container relative pt-8 mx-auto sm:pt-16 md:max-w-2xl animate-main-load">
               {children}
             </main>
             <Footer />
@@ -44,5 +44,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-  );
+  )
 }
