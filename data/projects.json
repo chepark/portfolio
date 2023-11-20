@@ -1,7 +1,27 @@
 {
   "projects": [
     {
-      "id": "p0",
+      "id": "p7",
+      "title": "Hesinki Bike Stations",
+      "description": "Fullstack app using HSL Open Data",
+      "url": "http://octoxy.ddns.net:50024/",
+      "github": "https://github.com/chepark/dingding",
+      "techStacks": [
+        "TypeScript",
+        "React",
+        "Node",
+        "Express",
+        "TailwindCSS",
+        "Postgres",
+        "Docker",
+        "Jest",
+        "Vitest"
+      ],
+      "bgColor": "#ccde58",
+      "imageRatio": "portrait"
+    },
+    {
+      "id": "p6",
       "title": "No Drone Zone",
       "description": "Drone and pilot tracker to save endangered birds",
       "url": "http://3.84.254.90/",
@@ -21,7 +41,7 @@
       "imageRatio": "portrait"
     },
     {
-      "id": "p1",
+      "id": "p5",
       "title": "Time Traveler",
       "description": "Website to learn about timezone",
       "url": "",
@@ -31,7 +51,7 @@
       "imageRatio": "portrait"
     },
     {
-      "id": "p2",
+      "id": "p4",
       "title": "Joinerry",
       "description": "Programming group project finder",
       "url": "",
@@ -58,7 +78,7 @@
       "imageRatio": "portrait"
     },
     {
-      "id": "p4",
+      "id": "p2",
       "title": "Light-Dark Mode Calculator",
       "description": "Light and dark mode styled calculator",
       "url": "https://chepark.github.io/typescript-calc",
@@ -68,7 +88,7 @@
       "imageRatio": "portrait"
     },
     {
-      "id": "p5",
+      "id": "p1",
       "title": "Galleria",
       "description": "Website to learn about famous paintings",
       "url": "https://soft-pothos-04baa8.netlify.app",
@@ -78,7 +98,7 @@
       "imageRatio": "portrait"
     },
     {
-      "id": "p6",
+      "id": "p0",
       "title": "Splitter",
       "description": "Web app to divide the bill among friends",
       "url": "https://chepark.github.io/splitter/",
