@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 import SideNavigation from '../components/sections/SideNavigation'
 import Footer from '../components/sections/Footer'
 import { ibm_plex_sans, righteous } from './fonts'
@@ -38,6 +39,7 @@ export default function RootLayout({
           <>
             <main className="container relative pt-8 mx-auto sm:pt-16 md:max-w-2xl animate-main-load">
               {children}
+              <Analytics />
             </main>
             <Footer />
           </>
