@@ -1,8 +1,8 @@
-import * as React from 'react'
-import Image from 'next/legacy/image'
-import profilePic from '../../public/me.png'
-import styles from '../../styles/SectionIntro.module.css'
-import Link from 'next/link'
+import * as React from 'react';
+import Image from 'next/legacy/image';
+import profilePic from '../../public/me.png';
+import styles from '../../styles/SectionIntro.module.css';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -35,7 +35,7 @@ const Hero = () => {
         </button>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

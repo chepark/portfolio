@@ -18,15 +18,15 @@ export default function HomePage({ postsMeta }: HomePageProps) {
   return (
     <>
       <div>
-        <div className='flex items-center justify-between ' id='about'>
-          <PageHeader title='Chaeah Park' />
+        <div className="flex items-center justify-between " id="about">
+          <PageHeader title="Chaeah Park" />
         </div>
 
         <div>
           <Hero />
         </div>
         {sections.map((section) => (
-          <div className='mt-32' key={section.id}>
+          <div className="mt-32" key={section.id}>
             <Title section={section.title} linkLabel={section.linkLabel} />
             {section.title === 'skills' && <SkillList />}
             {section.title === 'projects' && <ProjectList />}
