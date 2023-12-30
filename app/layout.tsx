@@ -1,9 +1,10 @@
-import { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/react'
-import SideNavigation from '../components/sections/SideNavigation'
-import Footer from '../components/sections/Footer'
-import { ibm_plex_sans, righteous } from './fonts'
-import './globals.css'
+import { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import SideNavigation from '../components/sections/SideNavigation';
+import Footer from '../components/sections/Footer';
+import { ibm_plex_sans, righteous } from './fonts';
+import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chaeah.com'),
@@ -20,12 +21,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html
@@ -44,7 +45,8 @@ export default function RootLayout({
             <Footer />
           </>
         </div>
+        <SpeedInsights />
       </body>
     </html>
-  )
+  );
 }
