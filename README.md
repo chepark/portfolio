@@ -21,8 +21,8 @@
 - [ ] Automate testing
 - [x] ~~Improve the architecture(Done:03.09-2023)~~
 - [x] ~~Change file extensions of data files and organize into data directory(Done:08.09.2023)~~
-- [ ] Setup ESLint and Prettier again and refactor code
-- [x] Edit license (Site: open source, Posts: Copyright)
+- [x] ~~Setup ESLint and Prettier again and refactor code~~
+- [x] ~~Edit license (Site: open source, Posts: Copyright)~~
 - [-] Create NPM package for icons
 
 ## How to run locally
