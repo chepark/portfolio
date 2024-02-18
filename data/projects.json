@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "p7",
-      "title": "Hesinki Bike Stations",
+      "title": "Helsinki Bike Stations",
       "description": "Fullstack app using HSL Open Data",
       "url": "http://octoxy.ddns.net:50024/",
       "github": "https://github.com/chepark/dingding",
