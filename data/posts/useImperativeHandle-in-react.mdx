@@ -1,5 +1,4 @@
 ---
-id: 7
 title: Demystifying useImperativeHandle in React
 tags:
   - react
@@ -78,10 +77,10 @@ useImperativeHandle(
     return {
       // ... this is the handle having methods, and  data ...
       // ... that you want to expose to the parent component ...
-    }
+    };
   },
   [],
-)
+);
 ```
 
 ## Why is it needed?
@@ -226,14 +225,14 @@ export default function Form() {
 
 I think `useImperativeHandle` can be useful especially in these two scenarioss:
 
-1. Video Player Component Imagine you're building a video player component. With
-   useImperativeHandle, you can expose methods like play, pause, and seek to
-   control the video playback externally, giving you more flexibility in how you
-   integrate and control the component in your app.
+1. **Video Player Component** Imagine you're building a video player component.
+   With useImperativeHandle, you can expose methods like play, pause, and seek
+   to control the video playback externally, giving you more flexibility in how
+   you integrate and control the component in your app.
 
-2. Custom Input Field Let's say you're creating a custom input field component.
-   You can use useImperativeHandle to expose methods like focus or clear to
-   control the input's behavior programmatically.
+2. **Custom Input Field** Let's say you're creating a custom input field
+   component. You can use useImperativeHandle to expose methods like focus or
+   clear to control the input's behavior programmatically.
 
 ## Pitfalls
 
