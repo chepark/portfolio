@@ -1,0 +1,117 @@
+---
+title: Debounce vs throttle
+tags:
+  - react
+  - debounce
+  - throttle
+date: 2024-02-15
+excerpt:
+  What are debounce and throttle? Learn use cases of each technique to improve
+  user experience
+---
+
+In the fast-paced world of web development, performance is not just an option;
+it's a necessity. Apps must be fast and responsive to keep users active and
+engaged. A key aspect of achieving these expectations is to optimize user
+interactions and events. Debounce and throttle are techniques that offer
+enhanced user experience by reducing unnecessary executions of event handlers
+(callback functions).
+
+## Understanding Event Handling in React
+
+Before diving into debounce and throttle, let's first understand a well-known
+challenges in React. React applications often need to respond to user actions in
+real-time. It could be a situation where a user types in a search box, scrolls
+infinitely through a list, or resizes their browser window. Each action of the
+user can trigger a cascade of event handlers. Without careful implementation,
+these handlers can execute functions more frequently than necessary, leading to
+performance bottlenecks and degrading user experiences.
+
+For instance, consider a search bar that fetches results as the user types.
+Without optimization, every keystroke would send a http request to the server,
+triggering unnecessary load and causing delays in the user interface. Similarly,
+handling scroll events without caution can lead to jittery scrolling
+experiences.
+
+## Introducing Debounce and Throttle
+
+The solution to these challenges lies in two key concepts: debouncing and
+throttling. Both techniques aim to control the frequency of function execution,
+but they do so in slightly different ways.
+
+<figure>
+  <img
+    src="https://media.licdn.com/dms/image/D5622AQGM90Aax5vAUw/feedshare-shrink_800/0/1697525824362?e=2147483647&v=beta&t=U_MU3_IJKPgOISTIwOYT_jLhOaafd5AkkR-9CCC8EJw"
+    alt="debounce and throttle"
+  />
+  <figcaption>
+    Debounce and throttle. Image from
+    [SleekSky](https://www.linkedin.com/posts/sleeksky_%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F-%3F%3F-%3F%3F%3F%3F%3F%3F%3F-activity-7119939361386766337-Q5tE/)
+  </figcaption>
+</figure>
+
+## What is debounce?
+
+Debounce is a method to executes a callback function when a certain period time
+is passed after a user event is detected. In other words, it waits for a pause
+in the events before executing an event handler. This technique can be
+particulary useful for actions like live search. It enable to fetch search
+results only when the user has stopped typing, reducing the number of calls to
+the server.
+
+## Implementing debounce in React
+
+```tsx
+import { useState, useEffect } from 'react';
+
+// Custom debounce hook
+function useDebounce(value, delay) {
+  // State and setters for debounced value
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    // Set debouncedValue to value (passed in) after the specified delay
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    // Cleanup function to cancel the timeout if value or delay changes
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]); // Only re-call effect if value or delay changes
+
+  return debouncedValue;
+}
+
+// Example component using the useDebounce hook
+function SearchInput() {
+  const [text, setText] = useState('');
+  const debouncedSearchTerm = useDebounce(text, 500);
+
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      // Perform the search or action using the debouncedSearchTerm
+      console.log(debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm]);
+
+  return (
+    <input
+      type="text"
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+      placeholder="Type to search..."
+    />
+  );
+}
+```
+
+## What is throttle?
+
+Throttling, on the other hand, ensures that a function is only executed once
+every specified period. Unlike debouncing, which waits for a pause, throttling
+will allow the function to execute periodically, ensuring that it's not called
+more often than the specified rate. This approach is ideal for handling actions
+like scrolling or resizing, where you want to ensure that the event handler is
+called at a controlled, steady pace.

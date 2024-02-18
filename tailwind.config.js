@@ -2,7 +2,12 @@
 module.exports = {
   //ADD PURGE BELOW
   content: ['./app/**/*.{ts,tsx,mdx}', './components/**/*.{ts,tsx,mdx}'],
+  safelist: [{ pattern: /hljs+/ }],
   theme: {
+    // code syntax highlight
+    hljs: {
+      theme: 'atom-one-dark',
+    },
     screens: {
       sm: '480px',
       md: '1030px',
@@ -61,5 +66,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwind-highlightjs'),
+  ],
 };
