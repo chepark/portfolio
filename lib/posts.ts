@@ -5,7 +5,6 @@ import matter from 'gray-matter';
 export type PostContent = string;
 export interface PostMeta {
   slug: string;
-  id: number;
   excerpt: string;
   title: string;
   tags: string[];
@@ -34,21 +33,20 @@ export const getPostBySlug = (slug) => {
   const source = fs.readFileSync(postPath);
   const {
     content,
-    data: { id, excerpt, title, tags, date },
+    data: { excerpt, title, tags, date },
   } = matter(source);
 
   const post: Post = {
     content,
     meta: {
       slug,
-      id,
       excerpt,
       title,
       tags: tags.sort(),
       date: date.toString(),
     },
   };
-
+  console.log('tags', date);
   return post;
 };
 
