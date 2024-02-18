@@ -34,7 +34,7 @@ export default function BlogPage({ posts }: BlogPageProps) {
       />
       <div className="mt-16 md:mt-28">
         {posts.map((post) => {
-          return <PostListItem key={post.meta.id} meta={post.meta} />;
+          return <PostListItem key={post.meta.date} meta={post.meta} />;
         })}
       </div>
     </div>
