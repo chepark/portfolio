@@ -1,5 +1,5 @@
 ---
-title: Debounce vs throttle
+title: Debounce and throttle in React
 tags:
   - react
   - debounce
@@ -61,50 +61,54 @@ the server.
 
 ## Implementing debounce in React
 
-```tsx
-import { useState, useEffect } from 'react';
+```jsx
+import { memo, useState, useEffect, useCallback } from 'react';
 
 // Custom debounce hook
-function useDebounce(value, delay) {
-  // State and setters for debounced value
-  const [debouncedValue, setDebouncedValue] = useState(value);
+function useDebounce(callback, delay) {
+  const [timer, setTimer] = useState(null);
+
+  // return callback wrapping with setTimeout.
+  const debouncedCallback = (...args) => {
+    if (!timer) {
+      setTimer(setTimeout(() => {
+        callback(...args)
+      }, delay);)
+    }
+  };
 
   useEffect(() => {
-    // Set debouncedValue to value (passed in) after the specified delay
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    // Cleanup function to cancel the timeout if value or delay changes
+    // if a timer already exists, remove it.
     return () => {
-      clearTimeout(handler);
+      if (timer) clearTimeout(timer);
     };
-  }, [value, delay]); // Only re-call effect if value or delay changes
+  }, [timer]);
 
-  return debouncedValue;
+  return debouncedCallback;
 }
 
-// Example component using the useDebounce hook
+// SearchInput: Example component using the useDebounce hook
 function SearchInput() {
-  const [text, setText] = useState('');
-  const debouncedSearchTerm = useDebounce(text, 500);
+  const [query, setQuery] = useState('');
+  const debouncedSearchRequest = useDebounce(()=>{console.log('fetch search results of', query)}, 500);
 
   useEffect(() => {
-    if (debouncedSearchTerm) {
-      // Perform the search or action using the debouncedSearchTerm
-      console.log(debouncedSearchTerm);
+    if (query) {
+      debouncedSearchRequest()
     }
-  }, [debouncedSearchTerm]);
+  }, [query]);
 
   return (
     <input
       type="text"
-      value={text}
-      onChange={(e) => setText(e.target.value)}
+      value={query}
+      onChange={e => setQuery(e.target.value)}
       placeholder="Type to search..."
     />
   );
 }
+
+export default memo(SearchInput)
 ```
 
 ## What is throttle?
@@ -115,3 +119,91 @@ will allow the function to execute periodically, ensuring that it's not called
 more often than the specified rate. This approach is ideal for handling actions
 like scrolling or resizing, where you want to ensure that the event handler is
 called at a controlled, steady pace.
+
+## Implementing throttle in React
+
+```jsx
+import { useState, useEffect } from 'react';
+
+function useThrottle(callback, delay) {
+  const [waiting, setWaiting] = useState('false');
+
+  const throttleCallback = (..args) => {
+    if (waiting) return;
+
+    callback(...args);
+    setWaiting(true);
+    const id = setTimeout(()=>{
+      setWaiting(false);
+    }, delay)
+  };
+
+  return throttleCallback;
+}
+
+function ResizeListner() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const handleResize = useThrottle(()=>{
+    setWidth(window.innerWidth)
+  }, 1000)
+
+  useEffect(()=>{
+    window.addEventListners('resize', handleResize);
+
+    return ()=> window.removeEventListner('resize', handleResize);
+  }, [handleResize])
+
+  return <p>inner width: {width}</p>
+}
+```
+
+## When to use Debounce vs. Throttle
+
+**Debounce** is your go-to when you need to ensure that a function is executed
+only after a certain amount of idle time has passed since the last invocation.
+This makes it ideal for handling events that don't require immediate feedback
+for every action. Common use cases include:
+
+- Validating text inputs or search fields as the user types.
+- Applying filters based on user input.
+- Autosaving functionality that triggers after typing pauses.
+
+**Throttle**, on the other hand, ensures that a function is called at most once
+in a specified time frame. Use throttle when you want to maintain regular
+execution intervals for actions that occur frequently. Typical scenarios
+include:
+
+- Tracking scroll positions to trigger animations or loading.
+- Resizing handlers for dynamic layout adjustments.
+
+## Mistsakes must be avoided
+
+- Overuse: Applying debounce or throttle universally without considering the
+  nature of the event can lead to sluggish interfaces or missed user inputs.
+  Assess the necessity on a case-by-case basis.
+
+- Incorrect Implementation: Mixing up debounce and throttle logic, or setting
+  inappropriate timings, can degrade the user experience. Ensure you're using
+  the right technique for the right scenario.
+
+- Memory Leaks: Not cleaning up event listeners or timeouts/intervals can lead
+  to memory leaks, especially in Single Page Applications. Always provide
+  cleanup functions in your useEffect hooks.
+
+## Advanced Topics
+
+Other Performance Optimization Techniques in React Memoization: Use React's
+`React.memo`, `useMemo`, and `useCallback` to prevent unnecessary re-renders by
+memoizing components and functions. This is especially beneficial for components
+that receive complex objects as props or rely on computationally expensive
+calculations.
+
+Lazy Loading: React's `React.lazy` and `Suspense` let you split your component
+code into separate chunks that are loaded only when needed. This can
+significantly reduce the initial load time of your app, making it feel snappier.
+
+Virtualization: For lists or grids displaying a large amount of data, consider
+using windowing or virtualization libraries like `react-window` or
+`react-virtualized`. These libraries render only the items currently visible to
+the user, reducing the number of DOM nodes and improving performance.
