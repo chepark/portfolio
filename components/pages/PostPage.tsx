@@ -10,12 +10,12 @@ import Comments from '../sections/Comments';
 
 const AuthorDate = ({ date }) => {
   return (
-    <div className='flex items-center justify-between mt-5 mb-12'>
-      <div className='flex items-center gap-5'>
-        <div className='w-16 h-16 overflow-hidden rounded-full'>
-          <Image src={profilePic} alt='Author of the article' sizes='20vw' />
+    <div className="flex items-center justify-between mt-5 mb-12">
+      <div className="flex items-center gap-5">
+        <div className="w-16 h-16 overflow-hidden rounded-full">
+          <Image src={profilePic} alt="Author of the article" sizes="20vw" />
         </div>
-        <div>Cheah Park</div>
+        <div>Chaeah Park</div>
       </div>
       <div>{date}</div>
     </div>
@@ -28,14 +28,14 @@ export default function PostPage({ post }) {
   // TODO: replace <Head></Head> to MetaData
   return (
     <>
-      <div className='cursor-pointer' onClick={router.back}>
+      <div className="cursor-pointer" onClick={router.back}>
         <BackArrowIcon />
       </div>
-      <div className='mt-16'>
-        <h1 className='text-2xl font-bold'>{post.meta.title}</h1>
+      <div className="mt-16">
+        <h1 className="text-2xl font-bold">{post.meta.title}</h1>
         <AuthorDate date={formatDate(post.meta.date)} />
       </div>
-      <div className='prose prose-slate max-w-none'>
+      <div className="prose prose-slate max-w-none">
         <MDXRemote {...post.source} />
       </div>
       <Comments />
