@@ -60,3 +60,11 @@ a {
 code {
   border-radius: 10px;
 }
+
+.socialIcon {
+  color: #a0a0a0;
+}
+
+.socialIcon:hover {
+  color: #363434;
+}

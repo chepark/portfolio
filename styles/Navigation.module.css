@@ -28,6 +28,14 @@
   transform: translateY(-1000%);
 }
 
+.socialIcon {
+  color: red;
+}
+
+.socialIcon:hover {
+  color: black;
+}
+
 @keyframes slideIn {
   0% {
     transform: translateX(-1000%);

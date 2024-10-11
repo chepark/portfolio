@@ -14,6 +14,7 @@ module.exports = {
       lg: '1440px',
     },
     fontSize: {
+      sm: ['12px', '14px'],
       base: ['16px', '24px'],
       lg: ['20px', '27px'],
       xl: ['36px', '44px'],
@@ -23,6 +24,7 @@ module.exports = {
       colors: {
         'primary-black': '#363434',
         grey: '#504d4d',
+        'light-grey': '#a0a0a0',
       },
       fontFamily: {
         ibm: ['var(--ibm)'],

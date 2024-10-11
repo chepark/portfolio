@@ -18,9 +18,9 @@ export default function HomePage({ postsMeta }: HomePageProps) {
   return (
     <>
       <div>
-        <div className="flex items-center justify-between " id="about">
+        {/* <div className="flex items-center justify-between " id="about">
           <PageHeader title="Chaeah Park" />
-        </div>
+        </div> */}
 
         <div>
           <Hero />

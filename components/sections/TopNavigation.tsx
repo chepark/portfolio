@@ -1,54 +1,44 @@
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from '../../styles/Navigation.module.css';
+import SocialLinksDrop from './SocialLinksDrop';
 
 const TopNavigation = () => {
+  const pathname = usePathname();
+  const fontColorBasedOnPath = (targetPath: string) =>
+    pathname === targetPath ? 'text-primary-black' : 'text-light-grey';
+
   return (
-    <div className='flex flex-row justify-center visible gap-5 pt-10 md:hidden'>
-      <Link href='/'>
-        <div
-          className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
-          style={{ animationDelay: '1000ms' }}
-        >
-          HOME
-        </div>
-      </Link>
-      <Link href='/#projects' legacyBehavior>
-        <div
-          className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
-          style={{ animationDelay: '1100ms' }}
-        >
-          PROJECTS
-        </div>
-      </Link>
-      <Link href='/blog'>
-        <div
-          className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
-          style={{ animationDelay: '1200ms' }}
-        >
-          BLOG
-        </div>
-      </Link>
-      <a
-        href='https://github.com/chepark'
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label='Github'
-      >
-        <div
-          className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
-          style={{ animationDelay: '1300ms' }}
-        >
-          GITHUB
-        </div>
-      </a>
-      <Link href={'/cv'} aria-label='CV'>
-        <div
-          className={`text-sm ${styles.mobileNavAnimation} cursor-pointer`}
-          style={{ animationDelay: '1400ms' }}
-        >
-          CV
-        </div>
-      </Link>
+    <div className="container flex items-center justify-between w-full py-10 mx-auto md:max-w-2xl">
+      <div className="flex gap-5 w-fit">
+        <Link href="/">
+          <div
+            className={`text-sm ${styles.mobileNavAnimation} cursor-pointer ${fontColorBasedOnPath('/')}  font-semibold hover:text-primary-black`}
+            style={{ animationDelay: '1000ms' }}
+          >
+            HOME
+          </div>
+        </Link>
+        <Link href="/#projects" legacyBehavior>
+          <div
+            className={`text-sm ${styles.mobileNavAnimation} cursor-pointer text-light-grey font-semibold hover:text-primary-black`}
+            style={{ animationDelay: '1100ms' }}
+          >
+            PROJECTS
+          </div>
+        </Link>
+        <Link href="/blog">
+          <div
+            className={`text-sm ${styles.mobileNavAnimation} cursor-pointer ${fontColorBasedOnPath('/blog')} text-light-grey font-semibold hover:text-primary-black`}
+            style={{ animationDelay: '1200ms' }}
+          >
+            BLOG
+          </div>
+        </Link>
+      </div>
+      <div className="hidden gap-5 md:flex w-fit">
+        <SocialLinksDrop />
+      </div>
     </div>
   );
 };
