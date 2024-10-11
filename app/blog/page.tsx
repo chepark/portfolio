@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const posts = await getAllPosts();
+  const posts = getAllPosts();
 
   return <BlogPage posts={posts} />;
 }
