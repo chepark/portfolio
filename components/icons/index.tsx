@@ -22,3 +22,7 @@ export { default as TailwindCssIcon } from './TailwindCssIcon';
 export { default as TypescriptIcon } from './TypescriptIcon';
 export { default as GithubLinkIcon } from './GithubLinkIcon';
 export { default as NodeIcon } from './Nodejs';
+export { default as GitIcon } from './Git';
+export { default as DockerIcon } from './Docker';
+export { default as PostgresIcon } from './Postgres';
+export { default as GerritIcon } from './Gerrit';
