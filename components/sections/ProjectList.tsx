@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import Link from 'next/link'
-import Dragger from 'react-physics-dragger'
-import projectsData from '../../data/projects.json'
-import { ExternalLinkIcon, GithubLinkIcon } from '../icons'
+import { useState } from 'react';
+import Link from 'next/link';
+import Dragger from 'react-physics-dragger';
+import projectsData from '../../data/projects.json';
+import { ExternalLinkIcon, GithubLinkIcon } from '../icons';
 
 const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
-  const [onIcon, setOnIcon] = useState({ github: false, link: false })
+  const [onIcon, setOnIcon] = useState({ github: false, link: false });
 
   return (
     <div
@@ -19,10 +19,10 @@ const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
         {project.github !== '' ? (
           <div
             onMouseOver={() => {
-              setOnIcon({ github: true, link: false })
+              setOnIcon({ github: true, link: false });
             }}
             onMouseOut={() => {
-              setOnIcon({ github: false, link: false })
+              setOnIcon({ github: false, link: false });
             }}
           >
             <a
@@ -38,10 +38,10 @@ const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
         {project.url !== '' ? (
           <div
             onMouseOver={() => {
-              setOnIcon({ github: false, link: true })
+              setOnIcon({ github: false, link: true });
             }}
             onMouseOut={() => {
-              setOnIcon({ github: false, link: false })
+              setOnIcon({ github: false, link: false });
             }}
           >
             <a
@@ -56,24 +56,24 @@ const ProjectItemMeta = ({ project, mouseOver, dimension }) => {
         ) : null}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const ProjectItem = ({ project }) => {
   const dimension =
-    project.imageRatio == 'landscape' ? 'w-80 h-56' : 'w-56 h-80'
+    project.imageRatio == 'landscape' ? 'w-80 h-56' : 'w-56 h-80';
 
-  const [isMouseOver, setIsMouseOver] = useState(false)
+  const [isMouseOver, setIsMouseOver] = useState(false);
 
   return (
     <div className="flex flex-col">
-      <button
+      <div
         className={`card-hover-home ${dimension} relative`}
         onMouseOver={() => {
-          setIsMouseOver(true)
+          setIsMouseOver(true);
         }}
         onMouseOut={() => {
-          setIsMouseOver(false)
+          setIsMouseOver(false);
         }}
       >
         <Link
@@ -85,16 +85,16 @@ const ProjectItem = ({ project }) => {
         >
           <div
             className="grid w-56 grid-cols-5 grid-rows-6 p-4 bg-black h-80"
-            style={{ backgroundColor: `${project.bgColor}` }}
+            style={{ backgroundImage: `${project.bgColor}` }}
           >
             <div
               className={
-                'text-white col-span-4 row-span-2 text-left text-[25px] leading-7 font-bold break-words whitespace-normal max-w-[14rem]'
+                'text-primary-black col-span-4 row-span-2 text-left text-[25px] leading-7 font-bold break-words whitespace-normal max-w-[14rem]'
               }
             >
               {project.title}
             </div>
-            <div className="w-full col-start-1 col-end-6 row-start-6 row-end-auto text-right text-white break-words whitespace-normal max-w-[14rem]">
+            <div className="w-full col-start-1 col-end-6 row-start-6 row-end-auto text-right text-primary-black break-words whitespace-normal max-w-[14rem]">
               {project.description}
             </div>
           </div>
@@ -104,28 +104,28 @@ const ProjectItem = ({ project }) => {
           mouseOver={isMouseOver}
           dimension={dimension}
         />
-      </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 type ProjectType = {
-  id: string
-  title: string
-  description: string
-  url: string
-  github: string
-  techStacks: string[]
-  bgColor: string
-  imageRatio: string
-}
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  github: string;
+  techStacks: string[];
+  bgColor: string;
+  imageRatio: string;
+};
 
 const ProjectList = () => {
-  const { projects } = projectsData
+  const { projects } = projectsData;
 
   const sortedProjects: ProjectType[] = projects.sort((a, b) =>
     a.id > b.id ? -1 : 1,
-  )
+  );
 
   return (
     <div id="projects" className="clip-inset mt-7">
@@ -137,7 +137,7 @@ const ProjectList = () => {
         </div>
       </Dragger>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectList
+export default ProjectList;

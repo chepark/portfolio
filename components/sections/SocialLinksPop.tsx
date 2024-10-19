@@ -12,6 +12,7 @@ function SocialLinksPop() {
         target="_blank"
         rel="noopener noreferrer"
         className={`flex items-center`}
+        aria-label="LinkedIn"
         style={{ animationDelay: '1300ms' }}
       >
         <FaLinkedinIn className="w-5 h-5 mr-1 socialIcon" />
@@ -21,6 +22,7 @@ function SocialLinksPop() {
         target="_blank"
         rel="noopener noreferrer"
         className={`flex items-center`}
+        aria-label="GitHub"
         style={{ animationDelay: '1400ms' }}
       >
         <FiGithub className="w-5 h-5 mr-1 socialIcon" />
@@ -30,6 +32,7 @@ function SocialLinksPop() {
         target="_blank"
         rel="noopener noreferrer"
         className={`flex items-center`}
+        aria-label="Dev.to"
         style={{ animationDelay: '1500ms' }}
       >
         <FaDev className="w-5 h-5 socialIcon" />

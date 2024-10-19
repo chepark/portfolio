@@ -3,7 +3,7 @@
     {
       "id": "p7",
       "title": "Helsinki Bike Stations",
-      "description": "Fullstack app using HSL Open Data",
+      "description": "#HSLOpenData #1MDataPoints #Docker",
       "url": "http://octoxy.ddns.net:50024/",
       "github": "https://github.com/chepark/dingding",
       "techStacks": [
@@ -17,13 +17,13 @@
         "Jest",
         "Vitest"
       ],
-      "bgColor": "#ccde58",
+      "bgColor": "linear-gradient(135deg, #fbc2eb 0%, #ffecd2 100%)",
       "imageRatio": "portrait"
     },
     {
       "id": "p6",
       "title": "No Drone Zone",
-      "description": "Drone and pilot tracker to save endangered birds",
+      "description": "#RealTimeData #SSE #AWS_EC2",
       "url": "http://3.84.254.90/",
       "github": "https://github.com/chepark/no-drone-zone",
       "techStacks": [
@@ -37,23 +37,23 @@
         "Jest",
         "React Testing Library"
       ],
-      "bgColor": "#cdced0",
+      "bgColor": "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
       "imageRatio": "portrait"
     },
     {
       "id": "p5",
       "title": "Time Traveler",
-      "description": "Website to learn about timezone",
+      "description": "#FullStak #TeamProject #Flask",
       "url": "",
       "github": "https://github.com/chepark/fullstack-time-traveler",
       "techStacks": ["Python", "JavaScript", "CSS", "Flask", "MySQL"],
-      "bgColor": "#e77da1",
+      "bgColor": "linear-gradient(135deg, #fcb69f 0%, #ffb7a5 100%)",
       "imageRatio": "portrait"
     },
     {
       "id": "p4",
       "title": "Joinerry",
-      "description": "Programming group project finder",
+      "description": "#OAuth #MongoDB #ReactQuill",
       "url": "",
       "github": "https://github.com/chepark/full-stack-joinerry",
       "techStacks": [
@@ -64,47 +64,37 @@
         "Sass",
         "MongoDB"
       ],
-      "bgColor": "#47bd94",
-      "imageRatio": "portrait"
-    },
-    {
-      "id": "p3",
-      "title": "Korean House",
-      "description": "Korean food ordering webapp",
-      "url": "Korean food ordering website",
-      "github": "https://github.com/chepark/korean-house",
-      "techStacks": ["React", "Firebase", "MUI", "Stripe API"],
-      "bgColor": "#6b5ea9",
+      "bgColor": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
       "imageRatio": "portrait"
     },
     {
       "id": "p2",
       "title": "Light-Dark Mode Calculator",
-      "description": "Light and dark mode styled calculator",
+      "description": "#TypeScript #MultiTheme #CalculatorLogic",
       "url": "https://chepark.github.io/typescript-calc",
       "github": "https://github.com/chepark/typescript-calc",
       "techStacks": ["TypeScript"],
-      "bgColor": "#ccde58",
+      "bgColor": "linear-gradient(135deg, #fecfef 0%, #d9afd9 100%)",
       "imageRatio": "portrait"
     },
     {
       "id": "p1",
       "title": "Galleria",
-      "description": "Website to learn about famous paintings",
+      "description": "#Responsive #React #PaintingGallery",
       "url": "https://soft-pothos-04baa8.netlify.app",
       "github": "https://github.com/chepark/galleria",
       "techStacks": ["React", "Sass", "Netlify"],
-      "bgColor": "#0d111e",
+      "bgColor": "linear-gradient(135deg, #d9afd9 0%, #97d9e1 100%)",
       "imageRatio": "portrait"
     },
     {
       "id": "p0",
       "title": "Splitter",
-      "description": "Web app to divide the bill among friends",
+      "description": "#React #BillSplitter",
       "url": "https://chepark.github.io/splitter/",
       "github": "https://github.com/chepark/splitter",
       "techStacks": ["HTML", "Sass", "JavaScript"],
-      "bgColor": "#0e484c",
+      "bgColor": "linear-gradient(135deg, #97d9e1 0%, #a8edea 100%)",
       "imageRatio": "portrait"
     }
   ]

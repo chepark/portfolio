@@ -13,13 +13,17 @@ const TopNavigation = () => {
       <div className="flex gap-5 w-fit">
         <Link href="/">
           <div
-            className={`text-sm ${styles.mobileNavAnimation} cursor-pointer ${fontColorBasedOnPath('/')}  font-semibold hover:text-primary-black`}
+            className={`text-sm ${
+              styles.mobileNavAnimation
+            } cursor-pointer ${fontColorBasedOnPath(
+              '/',
+            )}  font-semibold hover:text-primary-black`}
             style={{ animationDelay: '1000ms' }}
           >
             HOME
           </div>
         </Link>
-        <Link href="/#projects" legacyBehavior>
+        <Link href="/#projects">
           <div
             className={`text-sm ${styles.mobileNavAnimation} cursor-pointer text-light-grey font-semibold hover:text-primary-black`}
             style={{ animationDelay: '1100ms' }}
@@ -29,7 +33,11 @@ const TopNavigation = () => {
         </Link>
         <Link href="/blog">
           <div
-            className={`text-sm ${styles.mobileNavAnimation} cursor-pointer ${fontColorBasedOnPath('/blog')} text-light-grey font-semibold hover:text-primary-black`}
+            className={`text-sm ${
+              styles.mobileNavAnimation
+            } cursor-pointer ${fontColorBasedOnPath(
+              '/blog',
+            )} text-light-grey font-semibold hover:text-primary-black`}
             style={{ animationDelay: '1200ms' }}
           >
             BLOG
